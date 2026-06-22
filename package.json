@@ -1,0 +1,23 @@
+{
+  "name": "polyphony",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "대화주의(dialogism) 기반 실시간 토론 오케스트레이션·시각화 도구",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "firebase": "^12.15.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.8"
+  }
+}

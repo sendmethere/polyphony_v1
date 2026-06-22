@@ -1,0 +1,339 @@
+Discourse in Educational Settings
+Carolyn Temple Adger and Laura J. Wright
+
+0 Introduction
+
+In an early study of language use in schools, Shuy and Griffin (1981) noted that whatever else goes on there, what teachers and students do in schools on any day is talk. To a great extent, the fabric of schooling is woven of linguistic interaction. Since the late 1960s, discourse analysis has been used to examine the ways in which school discourse is unique and thus what children must be able to do linguistically in order to succeed there (Heath 2000). Attention has focused on the socialization functions that schools serve, especially but not exclusively those connected to teaching and learning.
+Over the years, several approaches to discourse analysis have been applied in educational settings. This chapter begins with an overview of the three main ones: interactional approaches such as Interactional Sociolinguistics (Gumperz 1982; Schiffrin 1994) and microethnography (Erickson 2004); critical approaches (Gee 1996; Rymes 2009); and the Systemic Functional Linguistic approach (Halliday 1961; Schleppegrell 2004). We explain these approaches and some of their contributions to the field of education, give examples of each in action, and demonstrate how they are methodologically distinct. In the second section of the chapter, we discuss some of the topics that have been addressed. Finally, we consider how insights from discourse analysis in schools can help to make them better.
+
+1 Approaches to Analyzing the Language of School
+
+1.1 Interactional approaches
+
+In the early 1970s, research on language in schools began to move from a focus on discrete chunks of language to a concern with “communication as a whole, both to understand what is being conveyed and to understand the specific place of language within the process” (Hymes 1972: xxviii). Highly inferential coding of classroom linguistic activity receded (though it persists still) as scholars with disciplinary roots in sociolinguistics, anthropology, social psychology, and sociology began to identify the structural cues by which interactants understand what is going on (e.g., Gumperz and Herasimchuk 1975; McDermott, Gospodinoff, and Aron 1978; Mehan 1979).
+Early work on elicitation sequences, composed of teacher initiation, student response, and teacher evaluation (IRE), provided principled descriptions of classroom talk as social interaction (Mehan et al. 1976). Examining the third turn of this exchange sequence, others proposed the terms feedback and follow up in place of evaluation (thus IRE becomes IRF) because these more inclusive terms cover the range of speech acts that can occur there in addition to evaluation, such as requesting more information or asking for evidence and backing (Jarvis and Robinson 1997; Kibler 2011; Lee 2008; Nassaji and Wells 2000). Follow-up of this sort initiates a new IRF.1
+
+(1) The teacher is checking student understanding of her directions for a math worksheet to
+    first-graders.
+1   Teacher:     What will you color in this row?
+2   Students:    Blue
+3   Teacher:     How many blue squares?
+4   Students:    Three
+5   Teacher:     Same on twenty-five, and twenty-six the same thing.
+                                                                   (Adger 1984: 249)
+
+Turn 1.1 is an initiation; 1.2, a response. No overt teacher evaluation occurs, but it is inferable: the teacher’s follow-up in 1.3 implicitly conveys positive evaluation and initiates a new sequence.
+Illuminating the IRE and principled means of linking talk and task laid the groundwork for investigating other aspects of interaction. Shultz, Florio, and Erickson (1982) and Green and Wallat (1981), for instance, examined social interaction in classrooms and homes in terms of participation structures. These account for who is participating; what turn-taking patterns are in effect; who has rights to the conversational floor; proxemics; gaze; and aspects of talk, such as directness, register, and paralinguistic cues. O’Connor and Michaels (1996) used Goffman’s (1974, 1981) notion of participant framework in explicating the ways that expert teachers socialize children into academic discussion, particularly through revoicing children’s lesson contributions. This participant framework “encompasses (1) the ways that speech event participants are aligned with or against each other and (2) the ways they are positioned relative to topics and even specific utterances” (O’Connor and Michaels 1996: 69). Talk and the participant frameworks it entails compose speech activities (Gumperz 1982).
+The IRE/IRF has continued to feature in discourse analytic accounts of academic talk. But communication in classrooms frequently proceeds in ways that do not follow the sequential, reciprocal model of interaction between teacher and students that the IRE/IRF captures so well. Taking a microethnographic approach, which looks at interaction in social space moment-to-moment in order to discover social systems, Erickson (1996) shows that classroom interaction frequently demonstrates a complex ecology of social and cognitive relations. Throughout lessons, clusters of contextualization cues such as gaze, proxemics, intonational contours, and volume (Gumperz 1977) establish a cadence that facilitates the social organization of attention and action in conversation. Using evidence from a combination kindergarten–first-grade classroom, Erickson shows that successful participation in a whole-group lesson requires responding with a correct answer in the appropriate interactive moment. Weak turns fall prey to the “turn sharks” hovering in the interactional waters to snatch them up.
+The following excerpt demonstrates the ecology of social and cognitive relations at play in a first-grade class, analyzed through an interactional sociolinguistic perspective (Gumperz 1982; Schiffrin 1994), which foregrounds interactional meaning. Here four students (Coong, Blair, Hai, and Katie) who have been given the same math task contextualize it differently. Coong, Blair, and Katie each engage in an individual vector of activity (Merritt 1998) involving the teacher, but their joint interaction coheres around group social relations and the shared instructional task. Hai tries and fails to initiate interaction, apparently because of trouble with timing.
+
+(2) The students, who are seated in four clusters, are working on math worksheets requiring
+    them to demonstrate number sets. The teacher moves among them, checking students’ work
+    and assisting them.
+
+1     Teacher:   You don’t have what?
+2     Coong:     I don’t have scissors.
+3     Teacher:   Scissors. What do you need scissors for.
+4     Coong:     Um: cut.
+5     Blair:     Lots of things.
+6     Teacher:   Why do you need scissors.
+7         :      //
+8     Hai:       I can’t make no nother one, Miss.
+9     Teacher:   (to Coong) In Mrs. K . . Mrs. K’s room?
+10          :    //
+11    Teacher:   Okay, go and get it.
+12    /Coong/:   //
+13    Teacher:                          [Okay, get it tomorrow.
+14    Katie:     (approaching from      [Mrs. D, what happened to [my number line.
+another cluster)
+15 Teacher:      (to Coong)                                       [Oh you mean for
+tomorrow in your class?
+16 Coong:        Um hum.
+17 Teacher: I’ll let you borrow one tomorrow.
+18 Katie:   Mrs. D, what happened to my . um .
+[number line?
+19 Teacher: (to Coong, loud)                       [Tomorrow. I will get you one. Now
+you go and work on your math:.
+20 Katie:   Mrs. D, what happened to my li . number line.
+21 Teacher: (soft) Well it was coming off your desk.
+22 Katie:   Huh uh:.
+23 Teacher: / /
+24 Katie:   Who took mine.
+25 Teacher: I did. / / cleaning off the desks. (looking at Blair’s math worksheet)
+Why did you erase the other one. The other one was fine. And this is=
+26 Coong: [/See/
+27 Teacher: =[the same.
+28 Hai:       [Mine’s the only one that=
+29 Blair:   Oh.
+30 Hai:     =stays [down.
+31 Teacher:           [You . you can make four sentences with these numbers. / / a
+little harder. (Adger 1984: 331–2)
+
+The three intersecting discourse tasks – Coong and the teacher, Katie and the teacher, and Blair and the teacher – are all relevant to the math lesson in progress but individually negotiated (Bloome and Theodorou 1988). In the teacher/Coong discourse task (lines 1–19), the teacher works to challenge Coong’s scissors issue as irrelevant to the math task that she has assigned, then to defer it, and then to direct him to the task. In the overlapping teacher/Katie interaction (lines 14–25), Katie manages to initiate an interaction about her missing number line. Despite the relevance of Katie’s topic to the lesson task, the teacher treats Katie’s talk as socially inappropriate, both in terms of timing and in terms of politeness. The teacher’s non-response to Katie’s first two turns (lines 14, 18) suggests that she views them as attempts to interrupt the scissors talk with Coong. She treats Katie’s question about the missing number line as an unwarranted complaint in light of the teacher’s right to maintain a neat classroom, even when it means removing a lesson-relevant resource. The overlapping teacher/Blair interaction (lines 25–31), in which the teacher points out his error and urges him on, requires the least negotiation. He shows evidence of having attended to the math task and thus there are no task or social structure issues to be aired. The teacher critiques Blair’s work, he acknowledges her, and she moves on.
+Hai does not succeed in getting uptake. He makes an unsuccessful bid for the teacher’s attention at what seems to be a transition relevant point in her interaction with Coong, complaining in line 8 that he can’t draw another of the items required to demonstrate his grasp of math sets. In line 28, his comment that his number line is still firmly attached to his desk is relevant to the topic of the discourse task at hand, which is itself relevant to the math lesson, but ill-timed in terms of topic development and turn exchange.
+This bit of classroom life instantiates Erickson’s observation that classroom conversation is often more than a dialogue, more than reciprocal or sequential interactive turns. In (2), lesson talk inheres in a discourse ecosystem in which students assemble their individual versions of the math lesson in concert with others, balancing academic and social-interactional concerns. The teacher participates in advancing the math lesson with Coong, Katie, and Blair, but as a responder more than an initiator or an evaluator, the roles that the IRE/IRF attributes to the teacher. Her goal seems to be to urge them to adopt her interpretation of the math task. She negotiates, directs, explains, and corrects. She also non-responds, protecting the interaction with Coong against interruptions from Blair in line 5, from Hai in line 8, and from Katie in line 14. In the discourse task that is most directly related to the math lesson, the one involving Blair, she initiates the talk, but as critique rather than as request for information. These interwoven tasks reflect the teacher’s responsibility to see that her version of the math lesson gets done and that interactional order is preserved, but they also show students as agents in both of those school agendas.
+Interactional approaches have been instrumental in understanding the constitutive role of talk in learning and social life at school, which is central to all discourse work on schooling.
+
+1.2 Critical approaches
+
+A second approach, Critical Discourse Analysis, in particular the New Literacy Studies (Gee 1996), gained popularity as researchers sought ways to link policy and institutional processes with daily educational practices. Many felt that linguistic research had not gone far enough to intervene and improve education for underserved students (Gumperz and Cook-Gumperz 2006). Critical approaches proceed from the view that discourse analysis “should seek to speak to – or intervene in – social issues in the world because language is a key way that humans ‘make or break our world and institutions’” (Gee 2011: 9). Gee uses Foucault’s (1973) notion of Discourse with a capital D to propose that language is an instrument of power within the school context (see introduction to this volume for a brief discussion on how critical theorists use the term discourse) and Discourse is an integration of ways of saying (informing), doing (action), and being (identity). On the other hand, discourse with a small d refers to language in use: stretches of talk or written text. Critical approaches use methods similar to those of interactional approaches, but they go farther by theorizing how instances of discourse can relate to larger institutional Discourses at play.
+Particularly relevant to examining language in school is the notion of primary Discourses, those that are learned at home, and secondary Discourses, those learned outside the home, including at school. A child’s primary Discourse is tied to a sense of self. If the child’s socialization to language at home matches the ways that language is used in academic settings, his or her sociolinguistic identity will be more unconsonant with academic language. The following example (Gee 2008b: 96) shows how primary and secondary Discourses may differ:
+
+Hornworms sure vary a lot in how well they grow.
+Hornworm growth exhibits a significant amount of variation.
+
+The sentences express similar meanings, but they differ in vocabulary, syntax, and style. They are not part of the same Discourse.
+Rymes (2009) adopts a critical perspective to classroom discourse in encouraging teachers to use discourse analytic methods for examining classroom interactions and reflecting on interactional practices there. She contends that “discourse-level inequality in the classroom is in large part produced by long-standing inequalities present in society outside the classroom” (153), and she challenges teachers to effect instructional, educational, and social change, informed by deep understanding of classroom practices. Understanding how small d discourses connect to Discourses within the institution of education is useful for effecting change (Heritage 1997; Mayr 2008).
+
+1.3 Systemic functional approach
+
+Systemic Functional Linguistics (SFL) (Eggins 1994; Halliday 1961; Halliday and Mattiesen 2004) is a general approach to linguistic analysis, but its focus on text has made it useful for analyzing discourse. Currently, SFL is widely used for investigating language use in academic settings (Janzen 2008). An underlying premise of SFL is that language has evolved into a system of socially meaningful signs. In practical terms, this means that language users choose from among a range of sign choices (linguistic and non-linguistic) to assemble meanings in different social contexts. Because of this, SFL has been useful for examining language use in different academic disciplines. Particularities of how language is used in science classrooms versus history classrooms have implications for students’ academic success. Early work in SFL laid the foundation for this type of analysis, describing linguistic features of mathematical (Halliday 1975) and scientific language (Halliday and Martin 1993). In Writing Science, Halliday and Martin (1993) argue that science cannot be done using ordinary language: scientific language has grown out of experimentation over time as scientists have harnessed the power of the grammatical system and developed a highly sophisticated way of representing ideas.
+
+It is not that these grammatical resources were invented by scientific writers. What the scientists did was to take resources that already existed in English and bring them out of their hiding for their own rhetorical purposes: to create a discourse that moves forward by logical and coherent steps, each building on what has gone before. (1993: 64)
+
+From this perspective, learning the language of science is intrinsic to learning the content of science, but this sophisticated, technical way of using language – academic language – can make science difficult for students.
+SFL shares common theoretical ground with other approaches to analyzing text in that it is focused on examining language use in its social context. SFL considers text to be the smallest unit of functional meaning, and so text is the primary unit of analysis. Halliday (1985) writes, “for a linguist, to describe language without accounting for text is sterile; to describe text without relating it to language is vacuous” (10). Two of SFL’s primary analytical lenses for examining texts are the notions of genre and register. Genre relates to the cultural context in which a text is invoked and the way people use language to achieve cultural goals (Martin 1984). Martin and Rose (2008) define genre as recurrent forms of text used for specific purposes, with specific discourse organization and language features. Schleppegrell (2004) lists some common genres in academic content areas such as procedures, recounts, reports, explanations, and arguments. All are culturally valued ways of using language to accomplish academic goals. In order to be academically successful, students must learn how to use language in ways that are culturally recognizable as academic.
+In addition to genre, SFL invokes register as a primary analytic lens and defines it as a constellation of lexical and grammatical features that realize a particular context (Halliday and Hassan 1989). The notion of register helps to explain why and how language use varies with context: “Registers vary because what language users do through language varies from context to context” (Schleppegrell 2004: 18). Students who are able to intuit shifts between registers at school are likely to be more academically successful than those who do not notice them.
+An early and influential SFL study is that by Jay Lemke (1990), who set out to show that the notion of talking science does not merely mean that students are talking about science, but rather that talking is a major part of scientific work. Activities such as observing, classifying, and comparing are constituted largely through talk. Since language itself is a conceptual system, “we may as well cut out the ‘middleman’ of mental concepts and simply analyze conceptual systems in terms of the thematic patterns of language use and other forms of meaningful human action” (Lemke 1990: 122).
+
+2 Topics of Discourse Analysis in School Settings
+
+The rise in discourse analytic study of educational settings is part of a broader embracing of qualitative study in a domain long dominated by quantitative research methods (Kamberelis and Dimitriadis 2005). Reasons for this shift are complex, but a prime influence came from the imperative – moral, legal, and economic – to educate a diverse population of students. A number of studies have focused on the processes of literacy development and second language learning in culturally diverse classrooms and found evidence of poorly matched linguistic, cultural, and social norms, which contribute to inequity. Such studies have been mentioned in Section 1 above for all three of the methodological approaches. Discourse analysis has also been brought to bear in discovering the nature of cognitive development in social space. Lemke’s (1990) study, mentioned in Section 1, is one of them. Many studies have combined more than one of these foci. This section shifts the focus from methods of discourse analysis to topics that discourse analytic studies have tackled in educational settings.
+
+2.1 Classroom interaction as cultural practice
+
+Discourse analysis has been instrumental in locating the educational struggle of children from certain groups in classroom practices, particularly where the cultural background of the teacher and the pervasive culture of the school is different from that of the students. Micro-analysis of classroom interaction shows mismatched frames (Tannen 1993) and participation style in classroom routines, with the result that over time students accumulate individual profiles of failure that mirror the statistics for their groups derived from standardized tests.
+Ethnographic studies have illuminated the community basis of some interactive behavior that schools find anomalous. Philips’s (1993) study conducted on the Warm Springs Indian Reservation explained some aspects of Native American students’ classroom participation style. What teachers saw as failure – students’ demurring from individual engagement with the teacher in whole-group lesson talk – reflected community values that favor collective talk. The discontinuity between the community and the school norms for interaction also led to schools’ disciplining Native American students who had misinterpreted the school norms for physical activity. (For related study of contrasting norms between Native American communities and Anglo schools, see also Erickson and Mohatt 1982; Scollon and Scollon 1981).
+The development of microethnographic methods contributed to understanding the role of nonverbal communication and timing, in particular the ways in which cultural differences between home and school may systematically mitigate the chances of success for some groups of students (e.g., Erickson and Shultz 1982; McDermott 1976; Mehan 1979). Florio and Shultz (1979) undertook a complex analysis of participation structures during mealtimes at home and lessons at school, events that exhibited some structural similarities. Comparison showed differences between the two settings in the alignment of a participation structure with the phase of an event. Thus in the preparation phase for dinner in the Italian American homes that they studied, conversation tended to have a single focus and one primary speaker at a time. But in the preparation phase of a lesson at school, several conversations could co-occur and children could chime in. Italian American children had trouble meeting the expectations for classroom participation structure in various lesson phases. Studies of such home–school mismatch illuminate the culturally based discourse practices that schools have taken for granted – patterns based on the middle-class European American traditions that have predominated in US institutions.
+Guadalupe Valdes’s (1996) ethnographic work with Mexican families in border towns in Texas showed that the Latinos’ understandings of education was different from those of others. For example, the phrase “bien educado” (well educated) has a broad connotation, meaning someone well behaved or good-mannered and moral. For the families she worked with, becoming well educated was not necessarily primarily about achieving academic success. Thus, when parents heard that their children were behaving well in school, they often thought that their children were doing well overall, even though they may have been struggling academically.
+A few studies shed light on classroom discourse patterns that are based in other traditions. Foster’s (1995) description of interaction in a community college class taught by an African American professor showed strategic use of stylistic features associated with African American culture. The professor’s lecture style included the call and response typical of gospel meetings – repetition, vowel elongation, alliteration, marked variation in pitch and tempo, and features of African American English – discourse strategies that invited her mostly African American students to chime in. Foster suggests that where cultural norms are shared, this interactive style may serve a special instructional function. Thus, students reported to Foster that the professor repeated information that they needed to know, but the data did not bear that out. Foster surmises that the students’ sense that some information had been repeated may have derived from the discourse style that drew attention to certain lesson content rather than from actual repetition.
+The following excerpt shows an African American teacher using such an interactional style in an upper elementary-school classroom (Adger and Detwyler 1993: 10–12). The effect here is to engage more than one student in a discourse task that is part of preparation for a high-stakes standardized test.
+
+(3) The teacher is introducing a worksheet on frequently misspelled words.
+
+1             Teacher:            It’s a word called a spelling demon. These
+letters sometimes are silent letters. What is a word that means to eat little by little. Which letter would . be missing.
+2             Eric:               Ooh.
+3             Teacher:            Now here’s the word.
+4             Robert:             Oh, I-I think             [I know.
+5             Teacher:                                      [All right.
+6             Eric:               /nↃ/.
+7             Teacher:            What does this say.
+8             Several:            /nↃ/. /nↃ/.
+9             Teacher:            What is it?
+10            Several:            /nↃ/. [/nↃ/.
+11            Teacher:                    [/nↃ/. (softly) All right. Now that’s
+really saying the word=
+12            Damien:             I know.
+13            Teacher:            =To eat little by little is gnaw. But it is a
+letter missing=
+14            Damien:             k
+15            Harold:             A k.                                                .
+16            Teacher:            =And that letter is . a . si: :=
+17            James:              Si=
+18            Thad:               Ooh.
+18            Teacher:            =lent=
+19            James:              =lent=
+20            Teacher:            =letter.
+21            James:              =letter.
+22            Teacher:            Now. How do you spell/nↃ/.
+23            Damien:             K n=
+24            David:              K n a=
+25            Damien:             =a w
+26            Several:            K n a w.
+27            David:              =w.
+28            Teacher:            Wrong.
+29            Robert:             It’s g.
+30            Teacher:            What is it Robert?
+31            Sonny:              Yes, g.
+32            Robert:             G, g.
+33              Pierre:                 K.
+34              Teacher:                (loud) It’s G::=
+35              Robert:                 G.
+36              Teacher:                =n:a:=
+37              Sam:                    We all look / /
+38              Teacher:                =w. It’s G::=
+39              Quentin:                I got it.
+40              Teacher:                =n:a:w. Which is why this paper is
+called sixty demons.
+
+Clearly, eliciting the correct answer is not the sole point of this lesson. In response to the teacher’s question in the first turn, “What is a word that means to eat little by little,” Eric indicates that he knows the answer with “Ooh” in turn 2, and Robert indicates the same with “I think I know” in turn 4. If getting the answer were the teacher’s goal, she could have asked Eric to supply it. But she continues asking for that answer in lines 7 and 9. Through repetition (e.g., letter in lines 13, 16, and 20), vowel elongation (e.g., the first vowel in silent, line 16), and volume shifting (lines 11 and 34), the teacher establishes a cadence that engages many more students than those who supply the information needed to advance the lesson. She transforms a technical exercise into a drama by emphasizing the unknown, ignoring the wrong answers in turns 14 and 15, spotlighting the speaker of the delayed correct answer (Robert, line 29), and then supplying the coda in line 40.
+Another study of classroom discourse in which the teacher and all of the students are African American showed shared dialect norms that do not match idealized norms for academic talk (Adger 1998). In an upper elementary classroom (not the one from which example [3] was taken), the teacher consistently used Standard English for instructional functions, but the students shifted along a dialect continuum as they changed registers within a literacy event. For a literary analysis task in which they spoke with authority about a text, students selected Standard English features, but elsewhere within the literacy event they used African American English. Students appeared to be using dialect resources in ways that mirror the linguistic norms of their community.
+Carol Lee (2006) uses discourse analysis, among other methodologies, to examine the relationship between talk and student reasoning. In one study, she shows that African American students leveraged African American English discourse patterns to help them reason in content classes. Lee’s study began by examining rhetorical features of African American students’ talk in reasoning about popular texts that were similar to academic texts that they encountered and culturally relevant to them (e.g., rap and film). In turn, their everyday rhetorical patterns could be used in classroom contexts to reason about literature and improve their literacy skills. Thus, by leveraging culturally diverse students’ ways of using language, she was able to support their learning of subject-matter material. Her work shows the value of treating students’ everyday ways of using language as a resource rather than as a deficit.
+
+2.2 Classroom discourse and literacy development
+
+Sociocultural studies have been concerned especially with the ways in which students develop literacy. In the field of education, two orientations toward literacy have commonly been juxtaposed – an autonomous orientation and an ideological orientation (Street 1995). To this, Wiley (2005) adds a third orientation that he places between these two called the social practices orientation. The autonomous orientation has been typified by research focusing on mental aspects of decoding and encoding text, or an individual’s ability to read and write. The social practices orientation is considered an early version of the ideological orientation and is typified by research focusing on how reading and writing are used in social contexts (e.g., Heath 1983; Scribner and Cole 1981; Scollon and Scollon 1981). In the ideological orientation, research shows how reading and writing are used in social contexts and how power relations are associated with use (e.g., Gee 1996; Street 1995). In addition to these, new approaches to literacy that go beyond a focus on reading, writing, and language use can be added. The New London Group/Multiliteracies perspective (New London Group 1996) and Multimodal literacy perspective (Kress and van Leeuwen 2001; Kress et al. 2001) extend the notion of literacy to other semiotic systems, including language, as well as action, gesture, sound, space, and visuals. Their approach situates discourse within an understanding of the broader semiotic landscape.
+Michaels’ work on “sharing time,” an elementary-school literacy event that brings children together at the start of the day for oral group activities, identified two patterns of thematic progression in children’s narratives: a topic-centered pattern and a topicassociating pattern (Michaels 1981). In the topic-centered pattern used by European American children, a narrow topic is mentioned and fixed in time to start the story, with subsequent utterances adhering to it. In the topic-associating pattern more usual with African American children, a general topic is put forth and other topics are raised in relation to it. The styles differ both in what can constitute the topic and in how topics are developed. From the perspective of the European American teacher whose classroom Michaels studied, the topic-associating style was illogical and deficient.
+Subsequent work on narrative style at a graduate school of education (Cazden 1988) further illuminated the role that teachers’ culturally based expectations for literacy-related discourse routines can play in student achievement. To test whether teacher reactions to children’s stories were ethnically based, researchers recorded topic-associating (episodic) and topic-centered stories, both told in Standard English. As anticipated, white graduate students (teachers or teacher interns) preferred the topic-centered stories. They attributed the episodic stories to low-achieving students with language problems or even family or emotional problems. Black graduate students, on the other hand, approved of both styles, commenting that the episodic stories showed interesting detail and description. They imagined that the story that had suggested serious language problems to the white graduate students had come from a highly verbal, bright child.
+Anthropological study of storytelling in Hawaiian communities described a collaborative narrative style that European American teachers had noticed in schools because it conflicts with narrative practices expected there. The speech event referred to in the community as “talk story” is characterized by co-narration among multiple speakers (Watson-Gegeo and Boggs 1977). By contrast, the idealized classroom discourse pattern involves one student speaking at a time, at the teacher’s bidding. Although this pattern is very often superseded, teachers expect students to comply when the one-at-a-time rule is invoked. In the Hawaiian schools, an experimental instructional program was created, based on the community co-narration event. It involved teachers participating in co-narration with the students, rather than leading IRE-based discussion (Au and Jordan 1981). Section 3 below reports that this program has endured.
+Taking a multimodal perspective, Kress et al. (2001) argue that science learning takes place in a multimodal environment and that reading and writing can only be understood in relationship to the larger semiotic system (such as actions, gestures, visuals, and three-dimensional models). In science classrooms, there may be times when reading and writing are secondary to other semiotic modalities. Thus, becoming literate (i.e., mastering the system of communicative signs) in a science context may require mastery of a range of semiotic forms beyond written language.
+
+2.3 Discourse study of second language development
+
+Discourse analysis has become an increasingly attractive analytic method for researchers in second language development because of what it can show about that process and what it can suggest about second language pedagogy. For example, in a study of the development of biliteracy, Moll and Dworin (1996) examine the written work in two languages of two young bilingual speakers (Spanish and English). They conclude that there are many paths to biliteracy, made up of students’ own histories and the social contexts for their learning, and that the ways in which bilingualism is typically characterized in schools is simplistic. In these two students’ classrooms, the freedom to use both English and Spanish meant that children developed literate skills in both languages – not just the means of writing two languages but the ability for “literate thinking” where writing in English involves reflecting on Spanish-language experience.
+In another study of second language development, Kibler (2011) adopts an interactional approach to examine emergent bilingual students’ interactions with teachers in informal writing conferences. She finds that the success of these conferences is typically more closely related to the interactional exchanges themselves, rather than to student understanding: students often agreed with teachers even when they did not understand, apparently to promote smooth interaction. Building on research into the IRE/IRF sequence, Kibler shows that teachers’ third turn is consequential for the type of interaction that ensues. For teachers, knowing about patterns of classroom discourse can help them to break counter-productive habits and to explore new ways of interacting with students. For researchers, attention to teacher/student interaction contributes to understanding emergent bilinguals’ long-term language and literacy development.
+Bunch (2009) uses the notion of speech event to examine the interactional demands of social studies classrooms for second language learners. He investigates aspects of a speech event he calls “going up there,” a group-led student presentation about a social studies topic based on a Complex Instruction curriculum. Three aspects of this speech event were particularly challenging for ELs: addressing multiple audiences, meeting the contrasting interactive demands of the student-led and teacher-led phases of the event, and managing the presentation structure through small group interaction. He argues that the interactional aspects make classroom oral academic discourse exceedingly complex. Because of this, he proposes that current discussions of academic language need to focus on more than vocabulary and grammar to teach second language learners how to engage in classroom interaction. He suggests that teachers should examine the speech events in their own classrooms to notice the language demands that they place on students and envision how they can support their students. They can also consider how they might expand the kinds of speech events that their students learn to engage in.
+
+2.4 Classroom discourse as learning
+
+Discourse analysis has played an important role in testing and extending the theories of Vygotsky (1978) and other contributors to the sociocognitive tradition (e.g., Rogoff 1991; Wertsch 1991). While Vygotsky’s thinking has been interpreted in very different ways (Cazden 1996), some of his insights have been highly influential in research on teaching and learning: that individuals learn in their own zones of proximal development lying just beyond the domains of their current expertise, and that they learn through interacting in that zone with a more knowledgeable individual and internalizing the resulting socially assembled knowledge. Thus learning is inherently both social and personal (Bakhtin 1981). A central question for scholars working in this tradition concerns the ways in which discourse between learner and expert mediates cognitive development. But research addressing this question has often given short shrift to the social dimension, viewing the discourse as an accomplishment – the product of learning – and leaving under-examined the flow of interactional, interpretive acts through which it is accomplished (Erickson 1996). Hicks (1996) observes that while sociocognitive theories have contributed significantly to educational theory, methods for testing them are not well developed (but see Wells 1993). Hicks lays out a complex methodology that combines the study of interaction and the study of the group’s texts, oral and written. This methodology is welded to sociocognitive theory: it examines the process of social meaning construction in light of the group’s history, as well as the process of the individual’s internalization or appropriation of social meaning.2
+Working in the interactional sociolinguistic tradition, Wright (2008a, 2008b) examines how and what students learn through participating in inquiry-based science units, showing how students transform their activity into external, evaluable forms of knowledge through language. The research follows students’ action and interaction with different scientific phenomena (e.g., bubbling/gas; rust/iron oxide) over the course of a curriculum unit in a middle school science classroom to examine how they transform first-hand activity into spoken and written linguistic representations in order to demonstrate what they have learned. For example, when talking about rust, what students first identify as a little red, they then learn to call rust; later they adopt the term iron oxide and Fe2 O3 when writing about their activities. This work shows how students are socialized to more scientific ways of representing their knowledge and, conversely, how social interaction helps them come to identify and appropriate valued forms of scientific language.
+SFL researchers, who view learning content and learning the language of the content area as intertwined, hold a slightly different lens on discourse as learning. Schleppegrell’s (2007) study of mathematical language shows how grammatical aspects affect student understanding. For example, because of the density of information in prenumerative phrases (e.g., the volume of, the length of), classifying adjectives (e.g., prime number, rectangular prism), and qualifiers (a number that can be divided by one and itself; a prism with sides of 8, 10, 12 cm [Veel 1999]), students may have difficulty identifying what a math problem is about before they even begin to attempt solutions. In addition to the complexity of mathematical language, there is a semiotic difference between the way mathematic concepts are encoded in language and the way they are encoded in symbolic notation. Mathematic concepts are typically things in language, but processes in symbolic notation. Schleppegrell observes that “translating among … semiotic resources and maintaining the technical register in classroom discourse is a challenge for teachers and students” (2007: 146).
+
+2.5 School as a venue for talk
+
+Most studies of discourse at school concern the language of teaching and learning, examining classroom interaction as social practice or cognitive work – or both. But school is also a site in which children’s repertoires for strategic language use expand (Hoyle and Adger 1998). Because classrooms and other school settings present social tasks that differ from those of home and neighborhood, they inspire innovation in register repertoires, framing capacities, and assumptions about appropriateness (Merritt 1998). Instructional settings in which students work without direct teacher participation, such as cooperative learning groups, allow them to construct knowledge and social structures through talk (Rosebery, Warren, and Conant 1992; Schlegel 1998; Tuyay, Jennings, and Dixon 1995) – although this may happen in ways that do not match teachers’ intentions (Gumperz and Field 1995).
+School is also a site of social interaction that is not academic. Eder’s (1993, 1998) work on lunchtime interaction in a middle school shows that collaborative retelling of familiar stories functions to forge individual and group identities that partition young people from adults, thereby building a peer culture. By animating (Goffman 1974) themselves, and their parents and teachers in collaborative retelling, the young people highlight contrasting perceptions of their identity and their view of the adults. Here school structures and participants – teachers and students – are recast as background for the socialization work that young people do together through discourse.
+
+3 Application of Discourse Studies to Education
+
+Most work on classroom discourse can be characterized as applied research: by illuminating educational processes, the research is relevant to critiquing classroom practice and to answering questions about how and where teaching and learning succeed or fail. Much of it has been conducted by scholars who are affiliated with schools of education and who address the most troubling questions about schools and schooling, especially in areas of differential educational success. But discourse analysis has become an increasingly popular methodology for teachers: observing language use in the classroom contributes to understanding how students engage in content areas such as science and math (Lemke 1990; Moschkovich 2007; O’Halloran 1999; Roth 2005). Heath observes that discourse analysis is a specialized way of viewing activity, and “those who carry out such work must have a grounding in linguistics and one or more of the other disciplines most related to understanding the context of language use” (2000: 57). Such a theoretical foundation is imperative for examining language functions in educational settings.
+One program linking research and educational practice that has grown out of the work on literacy instruction reported by Au and Jordan (1981), mentioned in Section 2.2, is exceptional in terms of longevity, coherence, and influence. In the late 1960s, teaching methods that approximated the community narrative style – talk story – were developed and tested by a team of teachers, psychologists, anthropologists, and linguists at the Kamehameha Early Education Program (KEEP), a research and development center in Honolulu. The approach had positive effects on students’ reading achievement there and later on test scores in other Hawaiian schools (Vogt, Jordan, and Tharp 1987). Findings from that project subsequently informed the development of sociocognitive theory in which the discourse of learning was highlighted (e.g., Rogoff 1991; Tharp and Gallimore 1988). Some of the researchers who began the Kamehameha work, along with others, have continued researching and developing educational approaches that promote school success, especially for language-minority students and others placed at risk for school failure. Their work is based on five principles for educational practice derived from their research and review of the literature on the influence of culture and gender on schooling:
+
+1. Facilitate learning through joint productive activity among teachers and students
+2. Develop competence in the language and literacy of instruction through all instruction activities
+3. Contextualize teaching and curriculum in the experiences and skills of home and community
+4. Challenge students toward cognitive complexity
+5. Engage students through dialogue, especially the instructional conversation. (Tharp 1997: 9–12)
+
+These principles stress interaction that involves teachers as assistants to children rather than drivers of dialogue and deliverers of information (Tharp 1997). Instructional conversations involve a teacher and a group of students in constructing meaning by linking texts and student knowledge as they talk (Goldenberg and Patthey-Chavez 1995). The challenge for the teacher, accustomed to taking every other turn in IRE/IRF-dominated classrooms, is to avoid responding to each student’s response so that students can talk in each other’s zones of proximal development.
+An additional principle points to the need for explicit instruction in academic language:
+
+6. Teach students new ways with words – disciplinary ways.
+
+Failing to do so privileges students whose language practices already incorporate aspects of academic language and disadvantages students who have not been socialized to the language of school (Gee 2008a). Second language researchers have noted that it is particularly important for English learners to master academic discourse in order to be successful in school (Anstrom, DiCerbo, and Butler 2010). Numerous studies of academic English have been conducted, based on different theoretical underpinnings (e.g., Bailey and Butler 2002; Gee 2008a; Scarcella 2003; Schleppegrell 2004; Stevens, Butler, and Castellon-Wellington 2000). While some of these studies are framed as discourse analyses, others recognize discourse as an important component of overall second language development.
+
+4 Conclusion
+
+This chapter touches on some methodological advances and topical interests within the corpus of discourse analysis in education settings. This corpus is by now encyclopedic (Bloome and Greene 1992; Cazden 1988; Corson 1998; Gee 2011; Rymes 2009; Schleppegrell 2004), and that is both the good and the bad news. The good news is that many of the educational processes that are the very stuff of school are being scrutinized critically. We now have methods and researchers skilled in their use for asking and answering questions about what lies beneath the educational outcomes that fuel policy decisions. The bad news is that discourse analysis and other qualitative methods are often secondary to quantitative methodologies within the educational establishment (Kamberelis and Dimitriadis 2005). One way of bringing this scholarship into the mainstream of educational research is through research and development programs that make the applications of discourse analysis very concrete along the lines of the Kamehaha program mentioned above. There is a need for more interdisciplinary collaboration in research design, data collection, and analyses requiring close attention to talk. The challenge is to avoid an atheoretical, merely commonsense approach to the study of talk and text, and to knit together and build on the rather disparate work so far amassed.
+
+
+NOTES
+
+1. Transcription conventions are as follows (based on Tannen 1984):
+
+   .           sentence-final falling intonation
+   ?           sentence-final rising intonation
+   ,           continuing intonation
+   ..          noticeable pause, less than 0.5 second
+   …           half-second pause; each extra dot represents additional half-second pause
+   underline   emphatic stress
+   CAPITALS    extra emphatic stress
+   italics     graphemes
+   //          slash marks indicate uncertain transcription or speaker overlap
+   =           speaker’s talk continues, or second speaker’s talk is latched onto first speaker’s without a noticeable pause
+   :           lengthened sound (extra colons represent extra lengthening)
+   ( )         information in parentheses applies to the talk that follows; continues until punctuation
+   [           overlapping brackets indicate two speakers are talking at the same time
+
+2. Although this is not the point that Hicks wants to make, the methodology for which she argues is able to make evident the dimensions of a discursive event that Fairclough identifies: “language use, analyzed as text, discourse practice and social practice” (Fairclough 1993: 138).
+
+
+REFERENCES
+
+Adger, Carolyn Temple. 1984. Communicative competence in the culturally diverse classroom: negotiating norms for linguistic interaction. PhD dissertation, Georgetown University.
+Adger, Carolyn Temple. 1998. Register shifting with dialect resources in instructional discourse. In Susan Hoyle and Carolyn Temple Adger, eds., Kids Talk: Strategic Language Use in Later Childhood. New York: Oxford, pp. 151–69.
+Adger, Carolyn Temple and Jennifer Detwyler. 1993. Empowering talk: African American teachers and classroom discourse. Paper presented at the annual meeting of the American Education Research Association, Atlanta.
+Anstrom, Kristina, Patricia DiCerbo, Frances Butler et al. 2010. A Review of the Literature on Academic English: Implications for K-12 English Language Learners. Arlington, VA: George Washington University Center for Equity and Excellence in Education.
+Au, Kathryn Hu-Pei and Cathie Jordan. 1981. Teaching reading to Hawaiian children: finding a culturally appropriate solution. In Henry Trueba, Grace Pung Guthrie, and Kathryn Hu-Pei Au, eds., Culture and the Bilingual Classroom: Studies in Classroom Ethnography. Rowley, MA: Newbury House, pp. 139–52.
+Bailey, Alison L. and Frances A. Butler. 2002. An Evidentiary Framework for Operationalizing Academic Language for Broad Application to K-12 Education: A Design Document. CSE tech. rep. no. 611. Los Angeles: University of California, National Center for Research on Evaluation, Standards, and Student Testing CRESST.
+Bakhtin, M. M. 1981 [1934–5]. The Dialogic Imagination: Four Essays by M. M. Bakhtin, ed. M. Holquist, trans. C. Emerson and M. Holquist. Austin: University of Texas Press.
+Bloome, David and Judith Greene. 1992. Educational contexts of literacy. Annual Review of Applied Linguistics, 13, 49–70.
+Bloome, David and E. Theodorou. 1988. Analyzing teacher–student and student–student discourse. In Judith L. Green and Judith O. Harker, eds., Multiple Perspective Analyses of Classroom Discourse. Norwood, NJ: Ablex, pp. 217–48.
+Bunch, George. 2009. “Going up there”: challenges and opportunities for language minority students during a mainstream classroom speech event. Linguistics and Education, 20, 81–108.
+Cazden, Courtney. 1988. Classroom Discourse: The Language of Teaching and Learning. Portsmouth, NH: Heinemann.
+Cazden, Courtney. 1996. Selective traditions: readings of Vygotsky in writing pedagogy. In Deborah Hicks, ed., Discourse, Learning, and Schooling. New York: Cambridge University Press, pp. 165–88.
+Corson, David. ed. 1998. Encyclopedia of Language and Education, 8 vols. Dordrecht, Netherlands: Kluwer.
+Eder, Donna. 1993. “Go get ya a French!”: Romantic and sexual teasing among adolescent girls. In Deborah Tannen, ed., Gender and Conversational Interaction. New York: Oxford University Press, pp. 17–31.
+Eder, Donna. 1998. Developing adolescent peer culture through collaborative narration. In Susan Hoyle and Carolyn Temple Adger, eds., Kids Talk: Strategic Language Use in Later Childhood. New York: Oxford, pp. 82–94.
+Eggins, Suzanne. 1994. An Introduction to Systemic Functional Linguistics. London: Pinter.
+Erickson, Frederick E. 1996. Going for the zone: the social and cognitive ecology of teacher–student interaction in classroom conversations. In Deborah Hicks, ed., Discourse, Learning, and Schooling. New York: Cambridge University Press, pp. 29–63.
+Erickson, Frederick E. 2004. Talk and Social Theory: Ecologies of Speaking and Listening in Everyday Life. Cambridge: Polity Press.
+Erickson, Frederick E. and Gerald Mohatt. 1982. Cultural organization of participation structures in two classrooms of Indian students. In George D. Spindler, ed., Doing the Ethnography of Schooling. New York: Holt, Rinehart & Winston.
+Erickson, Frederick E. and Jeffrey Shultz. 1982. The Counselor as Gatekeeper: Social Interaction in Interviews. New York: Academic Press.
+Fairclough, Norman. 1993. Critical discourse analysis and the marketization of public discourse: the universities. Discourse & Society, 4, 133–68.
+Florio, Susan and Jeffrey Schultz. 1979. Social competence at home and at school. Theory into Practice, 18, 234–43.
+Foster, Michele. 1995. Talking that talk: the language of control, curriculum, and critique. Linguistics and Education, 7, 129–50.
+Foucault, Michel. 1973. The Order of Things. New York: Random House.
+Gee, James Paul. 1996. Social Linguistics and Literacies: Ideology in Discourses, 2nd edn. London: Taylor & Francis.
+Gee, James Paul. 2008a. What is academic language? In Ann S. Rosebery and Beth Warren, eds., Teaching Science to English Language Learners: Building on Students’ Strengths. National Science Teachers Association, pp. 57–70.
+Gee, James Paul. 2008b. A sociocultural perspective on opportunity to learn. In Pamela A. Moss, Diana C. Pullin, James Paul Gee et al., eds., Assessment, Equity and Opportunity to Learn. Cambridge: Cambridge University Press, pp. 76–108.
+Gee, James Paul. 2011. An Introduction to Discourse Analysis: Theory and Method, 3rd edn. New York: Routledge.
+Goffman, Erving. 1974. Frame Analysis. Cambridge, MA: Harvard University Press.
+Goffman, Erving. 1981. Forms of Talk. Philadelphia: University of Pennsylvania Press.
+Goldenberg, Claude and Genevieve Patthey-Chavez. 1995. Discourse processes in instructional conversations: interactions between teacher and transition readers. Discourse Processes, 19, 57–73.
+Green, Judith and Cynthia Wallat. 1981. Mapping instructional conversations – a sociolinguistic ethnography. In Judith Green and Cynthia Wallat, eds., Ethnography and Language in Education Settings. Norwood, NJ: Ablex, pp. 161–205.
+Gumperz, John J. 1977. Sociocultural knowledge in conversational inference. In Murielle Saville-Troike, ed., Linguistics and Anthropology: 28th Annual Round Table Monograph Series in Languages and Linguistics. Washington, DC: Georgetown University Press, pp. 191–211.
+Gumperz, John J. 1982. Discourse Strategies. Cambridge: Cambridge University Press.
+Gumperz, John J. and Jenny Cook-Gumperz. 2006. Interactional sociolinguistics in the study of schooling. In Jenny Cook-Gumperz, ed., The Social Construction of Literacy. Cambridge: Cambridge University Press, pp. 50–75.
+Gumperz, John J. and Margaret Field. 1995. Children’s discourse and inferential practices in cooperative learning. Discourse Processes, 19, 133–47.
+Gumperz, John J. and Eleanor Herasimchuk. 1975. The conversational analysis of social meaning: a study of classroom interaction. In Mary Sanches and Ben G. Blount, eds., Sociocultural Dimensions of Language Use. New York: Academic, pp. 81–115.
+Halliday, M. A. K. 1961. Categories of the theory of grammar. Word, 17(3), 241–92.
+Halliday, M. A. K. 1975. Some Aspects of Sociolinguistics. Interactions between Mathematics and Linguistics. Nairobi: UNESCO.
+Halliday, M. A. K. 1985. Systemic background. In J. D. Benson and W. S. Greaves, eds., Systemic Perspectives on Discourse, vol. 1. Selected Theoretical Papers from the 9th International Systemic Workshop. Norwood, NJ: Ablex, pp. 1–15.
+Halliday, M. A. K. and Ruqaiya Hassan. 1989. Language, Context and Text: A Social Semiotic Perspective. Oxford: Oxford University Press.
+Halliday, M. A. K. and J. R. Martin. 1993. Writing Science: Literacy and Discursive Power. Pittsburgh: University of Pittsburgh Press.
+Halliday, M. A. K. and Christian Mattiesen. 2004. An Introduction to Functional Grammar. London: Hodder Arnold.
+Heath, Shirley Brice. 1983. Ways with Words: Language, Life, and Work in Communities and Classrooms. New York: Cambridge University Press.
+Heath, Shirley Brice. 2000. Linguistics in the study of language in education. Harvard Educational Review, 701, 49–59.
+Heritage, John. 1997. Conversation analysis and institutional talk: analyzing data. In David Silverman, ed., Qualitative Research, Theory, Method, and Practice. London: Sage, pp. 161–82.
+Hicks, Deborah. 1996. Contextual inquiries: a discourse-oriented study of classroom learning. In Deborah Hicks, ed., Discourse, Learning, and Schooling. New York: Cambridge University Press, pp. 104–42.
+Hoyle, Susan and Carolyn Temple Adger. 1998. Introduction. In Susan Hoyle and Carolyn Temple Adger, eds., Kids Talk: Strategic Language Use in Later Childhood. New York: Oxford, pp. 3–22.
+Hymes, Dell. 1972. Introduction. In Courtney Cazden, Vera Johns, and Dell Hymes, eds., Functions of Language in the Classroom. New York: Teachers College Press, pp. xi–lvii.
+Janzen, Joy. 2008. Teaching English language learners in the content areas. Review of Educational Research, 784, 1010–38.
+Jarvis, Jennifer and Mark Robinson. 1997. Analysing educational discourse: an exploratory study of teacher response and support to pupils’ learning. Applied Linguistics, 182, 212–28.
+Kamberelis, George and Greg Dimitriadis. 2005. On Qualitative Inquiry. New York: Teachers College Press.
+Kibler, Amanda. 2011. Understanding the “mmhm”: dilemmas in talk between teachers and adolescent emergent bilingual students. Linguistics and Education, 22, 213–32.
+Kress, Gunther, Carey Jewitt, John Ogborn, and Charalampos Tsatsarelis. 2001. Multimodal Teaching and Learning: The Rhetorics of the Science Classroom. London: Continuum.
+Kress, Gunther and Theo van Leeuwen. 2001. Multimodal Discourse: The Modes and Media of Contemporary Comunication. New York: Oxford University Press.
+Lee, Carol D. 2006. Every good-bye ain’t gone: analyzing the cultural underpinnings of classroom talk. Qualitative Studies in Education, 19, 305–27.
+Lee, Yo-An. 2008. Yes–no questions in the third-turn position: pedagogical discourse processes. Discourse Processes, 453, 237–62.
+Lemke, Jay. 1990. Talking Science: Language, Learning, and Values. Norwood, NJ: Ablex.
+Martin, J. R. 1984. Language, register, and genre. In Frances Christie, ed., Children Writing. Geelong, Victoria: New South Publishing, pp. 21–9.
+Martin, J. R. and David Rose. 2008. Genre Relations: Mapping Culture. London: Routledge.
+Mayr, Andrea. 2008. Language and Power: An Introduction to Institutional Discourse. New York: Continuum.
+McDermott, Ray P. 1976. Kids make sense: an ethnographic account of the interactional management of success and failure in one first grade classroom. PhD dissertation, Stanford University.
+McDermott, Ray P., Kenneth Gospodinoff, and Jeffrey Aron. 1978. Criteria for an ethnographically adequate description of concerted activities and their contexts. Semiotica, 24, 245–75.
+Mehan, Hugh. 1979. Learning Lessons: Social Organization in the Classroom. Cambridge: Harvard University Press.
+Mehan, Hugh, Courtney Cazden, L. Coles et al. 1976. The Social Organization of Classroom Lessons. San Diego: University of California, Center for Human Information Processing.
+Merritt, Marilyn. 1998. Of ritual matters to master: structure and improvisation in language development at primary school. In Susan B. Hoyle and Carolyn Temple Adger, eds., Kids Talk: Strategic Language Use in Later Childhood. New York: Oxford, pp. 134–50.
+Michaels, Sarah. 1981. Sharing time: children’s narrative styles and differential access to literacy. Language in Society, 10, 423–42.
+Moll, Luis and Joel E. Dworin. 1996. Biliteracy development in classrooms: social dynamics and cultural possibilities. In Deborah Hicks, ed., Discourse, Learning, and Schooling. New York: Cambridge University Press, pp. 221–46.
+Moschkovich, Judit N. 2007. Examining mathematical discourse practices. For the Learning of Mathematics, 27, 24–30.
+Nassaji, Hossein and Gordon Wells. 2000. What’s the use of “triadic dialogue”? An investigation of teacher–student interaction. Applied Linguistics, 213, 376–406.
+New London Group. 1996. A pedagogy of multiliteracies: designing social futures. Harvard Educational Review, 66(1), 60–92.
+O’Connor, Mary Catherine and Sarah Michaels. 1996. Shifting participant frameworks: orchestrating thinking practices in group discussion. In Deborah Hicks, ed., Discourse, Learning, and Schooling. New York: Cambridge University Press, pp. 63–104.
+O’Halloran, Kay L. 1999. Towards a systemic functional analysis of multisemiotic mathematics texts. Semiotica, 124(1/2), 1–29.
+Philips, Susan. 1993. The Invisible Culture: Communication in Classroom and Community on the Warm Springs Indian Reservation, 2nd edn. Prospect Heights, IL: Waveland Press.
+Rogoff, Barbara. 1991. Social interaction as apprenticeship in thinking: guidance and participation in spatial planning. In Lauren B. Resnick, John M. Levine, and Stephanie D. Teasley, eds., Perspectives on Socially Shared Cognition. Washington: APA Press, pp. 349–64.
+Rosebery, Ann, Beth Warren, and Faith Conant. 1992. Appropriating scientific discourse: findings from language minority classrooms. Journal of the Learning Sciences, 2, 61–94.
+Roth, Wolff-Michael. 2005. Talking Science: Language and Learning in Science. Lanham, MD: Rowman & Littlefield.
+Rymes, Betsy. 2009. Classroom Discourse Analysis: A Tool for Critical Reflection. Creskill, NJ: Hampton Press.
+Scarcella, Robin. 2003. Academic English: A Conceptual Framework. Technical Report no. 2003–1 no. 1. Irvine, CA: University of California Linguistic Minority Research Institute.
+Schiffrin, Deborah. 1994. Approaches to Discourse. Malden, MA: Blackwell.
+Schlegel, Jennifer. 1998. Finding words, finding means: collaborative learning and distributed cognition. In Susan B. Hoyle and Carolyn Temple Adger, eds., Kids Talk: Strategic Language Use in Later Childhood. New York: Oxford, pp. 187–204.
+Schleppegrell, Mary J. 2004. The Language of Schooling. Mahwah, NJ: Lawrence Erlbaum.
+Schleppegrell, Mary J. 2007. The linguistic challenges of mathematics teaching and learning: a research review. Reading and Writing Quarterly, 23(2), 139–59.
+Scollon, Ron and Suzanne B. K. Scollon. 1981. Narrative, Literacy and Face in Interethnic Communication. Norwood, NJ: Ablex.
+Scribner, Sylvia and Michael Cole. 1981. The Psychology of Literacy. Boston: Harvard University Press.
+Shultz, Jeffrey, Susan Florio, and Frederick E. Erickson. 1982. “Where’s the floor?”: aspects of social relationships in communication at home and at school. In Perry Gilmore and Allan A. Glatthorn, eds., Children In and Out of School: Ethnography and Education. Washington, DC: Center for Applied Linguistics.
+Shuy, Roger W. and Peg Griffin. 1981. What do they do any day: studying functional language. In Patrick W. Dickson, ed., Children’s Oral Communication Skills. New York: Academic, pp. 271–86.
+Sinclair, John McHardy and Malcolm Coulthard. 1975. Towards an Analysis of Discourse. London: Oxford.
+Stevens, Robin A., Frances A. Butler, and Martha Castellon-Wellington. 2000. Academic Language and Content Assessment: Measuring the Progress of ELLs. CSE Tech. Rep. No. 552. Los Angeles: University of California, National Center for Research on Evaluation, Standards, and Student Testing.
+Street, Brian. 1995. Literacy in Theory and Practice. Cambridge: Cambridge University Press.
+Tannen, Deborah. 1984. Conversational Style: Analyzing Talk among Friends. Norwood, NJ: Ablex.
+Tannen, Deborah. 1993. What’s in a frame? Surface evidence for underlying expectations. In Deborah Tannen, ed., Framing in Discourse. New York: Oxford, pp. 14–56.
+Tharp, Roland G. 1997. From At-Risk to Excellence: Research, Theory, and Principles for Practices. Santa Cruz: University of California, Santa Cruz, Center for Research on Education, Diversity and Excellence.
+Tharp, Roland G. and Ronald Gallimore. 1988. Rousing Minds to Life: Teaching, Learning, and Schooling in Social Context. Cambridge: Cambridge University Press.
+Tuyay, Sabrina, Louise Jennings, and Carol Dixon. 1995. Classroom discourse and opportunities to learn: an ethnographic study of knowledge construction in a bilingual third-grade classroom. Discourse Processes, 19, 75–110.
+Valdes, Guadalupe. 1996. Con Respeto: Bridging the Distances between Culturally Diverse Families and Schools: An Ethnographic Portrait. New York: Teachers College Press.
+Veel, Robert. 1999. Language, knowledge, and authority in school mathematics. In Frances Christie, ed., Pedagogy and the Shaping of Consciousness. New York: Continuum, pp. 185–216.
+Vogt, Lynn A., Cathie Jordan, and Roland G. Tharp. 1987. Explaining school failure, producing school success: two cases. Anthropology and Education Quarterly, 19, 276–86.
+Vygotsky, L. S. 1978. Mind in Society. Cambridge, MA: Harvard University Press.
+Watson-Gegeo, Karen A. and Stephen T. Boggs. 1977. From verbal play to talk story: the role of routines in speech events among Hawaiian children. In Susan Ervin-Tripp and Claudia Mitchell-Kernan, eds., Child Discourse. New York: Academic Press, pp. 67–90.
+Wells, Gordon. 1993. Reevaluating the IRF sequence: a proposal for the articulation of theories of activity and discourse for the analysis of teaching and learning in the classroom. Linguistics and Education, 5(1), 1–38.
+Wertsch, James V. 1991. Voices of the Mind. Cambridge, MA: Harvard University Press.
+Wiley, Terrence. 2005. Literacy and Language Diversity in the United States. Washington, DC: Center for Applied Linguistics.
+Wright, Laura. J. 2008a. Learning by doing: the objectification of knowledge across semiotic modalities. Linguistics and Education, 19, 225–43.
+Wright, Laura. J. 2008b. Writing science and objectification: selecting, organizing, and decontextualizing knowledge. Linguistics and Education, 19, 265–93.
