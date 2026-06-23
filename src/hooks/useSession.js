@@ -43,3 +43,36 @@ export function getMember(code) {
 export function setMember(code, member) {
   localStorage.setItem(MEMBER_KEY(code), JSON.stringify(member))
 }
+
+// 최근 입장한 세션 기록 (이 브라우저 기준). 메인화면에서 다시 입장하는 용도.
+const RECENT_KEY = 'polyphony:recent'
+
+export function getRecentSessions(limit = 5) {
+  try {
+    const list = JSON.parse(localStorage.getItem(RECENT_KEY) || '[]')
+    return list.sort((a, b) => b.ts - a.ts).slice(0, limit)
+  } catch {
+    return []
+  }
+}
+
+export function addRecentSession({ code, title, role }) {
+  let list = []
+  try {
+    list = JSON.parse(localStorage.getItem(RECENT_KEY) || '[]')
+  } catch {
+    list = []
+  }
+  list = list.filter((s) => s.code !== code) // 중복 제거(최신으로 갱신)
+  list.unshift({ code, title: title || '제목 없는 세션', role, ts: Date.now() })
+  localStorage.setItem(RECENT_KEY, JSON.stringify(list.slice(0, 20)))
+}
+
+export function removeRecentSession(code) {
+  try {
+    const list = JSON.parse(localStorage.getItem(RECENT_KEY) || '[]').filter((s) => s.code !== code)
+    localStorage.setItem(RECENT_KEY, JSON.stringify(list))
+  } catch {
+    /* noop */
+  }
+}

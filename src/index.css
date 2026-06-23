@@ -210,6 +210,16 @@ textarea { resize: vertical; min-height: 80px; }
 .role-pick-emoji { font-size: 38px; line-height: 1; }
 .role-pick-title { font-size: 17px; font-weight: 700; }
 
+/* 최근 세션 목록 */
+.recent-item {
+  display: flex; align-items: center; gap: 8px; width: 100%; text-align: left;
+  padding: 8px 10px; border: 1px solid var(--paper-line); border-radius: 8px; background: #fff;
+}
+.recent-item:hover { background: #faf8f3; border-color: #d8d1c2; }
+.recent-item .recent-title { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 600; font-size: 13px; }
+.recent-item .recent-del { color: var(--ink-soft); opacity: 0.5; font-size: 12px; padding: 0 2px; }
+.recent-item .recent-del:hover { opacity: 1; color: #b5482f; }
+
 .choice {
   border: 1px solid var(--paper-line);
   border-radius: 8px;

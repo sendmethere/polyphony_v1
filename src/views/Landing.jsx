@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { store } from '../lib/store.js'
-import { setMember } from '../hooks/useSession.js'
+import { setMember, getRecentSessions, addRecentSession, removeRecentSession, getMember } from '../hooks/useSession.js'
 
 export default function Landing() {
   const nav = useNavigate()
@@ -10,11 +10,13 @@ export default function Landing() {
   const [code, setCode] = useState('')
   const [nickname, setNickname] = useState('')
   const [error, setError] = useState('')
+  const [recent, setRecent] = useState(() => getRecentSessions(5))
 
   function createSession() {
     const newCode = store.createSession({ title: title.trim() || '제목 없는 세션' })
     const pid = store.joinSession(newCode, { nickname: '진행자', role: 'facilitator' })
     setMember(newCode, { id: pid, nickname: '진행자', role: 'facilitator' })
+    addRecentSession({ code: newCode, title: title.trim(), role: 'facilitator' })
     nav(`/s/${newCode}/admin`)
   }
 
@@ -25,6 +27,7 @@ export default function Landing() {
     if (!session) return setError('존재하지 않는 세션 코드입니다.')
     const pid = store.joinSession(c, { nickname: '진행자', role: 'facilitator' })
     setMember(c, { id: pid, nickname: '진행자', role: 'facilitator' })
+    addRecentSession({ code: c, title: session.title, role: 'facilitator' })
     nav(`/s/${c}/admin`)
   }
 
@@ -37,7 +40,23 @@ export default function Landing() {
     if (session.status === 'closed') return setError('이미 종료된 세션입니다.')
     const pid = store.joinSession(c, { nickname: nickname.trim(), role: 'student' })
     setMember(c, { id: pid, nickname: nickname.trim(), role: 'student' })
+    addRecentSession({ code: c, title: session.title, role: 'student' })
     nav(`/s/${c}/student`)
+  }
+
+  // 최근 세션 다시 입장 — 저장된 역할로. (참가자 식별 없으면 진행자/학생 기본으로 복원)
+  function reenter(s) {
+    if (!getMember(s.code)) {
+      setMember(s.code, { id: `p_${s.code}`, nickname: s.role === 'student' ? '학생' : '진행자', role: s.role })
+    }
+    addRecentSession({ code: s.code, title: s.title, role: s.role })
+    nav(s.role === 'student' ? `/s/${s.code}/student` : `/s/${s.code}/admin`)
+  }
+
+  function dropRecent(e, code) {
+    e.stopPropagation()
+    removeRecentSession(code)
+    setRecent(getRecentSessions(5))
   }
 
   return (
@@ -77,6 +96,22 @@ export default function Landing() {
               <div className="tiny muted">코드로 참가해 의견을 냅니다</div>
             </button>
           </div>
+
+          {recent.length > 0 && (
+            <div className="panel stack" style={{ marginTop: 4 }}>
+              <h3>최근 세션</h3>
+              {recent.map((s) => (
+                <button key={s.code} className="recent-item" onClick={() => reenter(s)}>
+                  <span className={`role-tag ${s.role === 'student' ? 'student' : 'admin'}`}>
+                    {s.role === 'student' ? '학생' : '진행자'}
+                  </span>
+                  <span className="recent-title">{s.title}</span>
+                  <span className="code">{s.code}</span>
+                  <span className="recent-del" title="목록에서 제거" onClick={(e) => dropRecent(e, s.code)}>✕</span>
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       )}
 
