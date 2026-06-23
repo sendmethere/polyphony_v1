@@ -5,5 +5,8 @@ dist
 !.env.example
 .DS_Store
 *.log
-.md
+
+# 기획/논문/통계 문서는 로컬만 — README 제외 모든 .md 깃 제외
 *.md
+!README.md
+!public/README.md

@@ -26,7 +26,7 @@ export default function TeacherView() {
   return (
     <div style={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
       <div className="app-bar">
-        <span className="brand">Polyphony</span>
+        <img className="brand-logo" src="/logo.png" alt="Polyphony" />
         <span className="role-tag teacher">모니터링 (교사)</span>
         <span className="muted tiny">{session.title}</span>
         <span className="spacer" />

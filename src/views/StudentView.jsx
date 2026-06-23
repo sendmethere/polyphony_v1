@@ -183,7 +183,7 @@ function Shell({ code, title, snapshot, onExit, children }) {
   return (
     <div style={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
       <div className="app-bar">
-        <span className="brand">Polyphony</span>
+        <img className="brand-logo" src="/logo.png" alt="Polyphony" />
         <span className="role-tag student">학생</span>
         <span className="muted tiny">{title}</span>
         <span className="spacer" />

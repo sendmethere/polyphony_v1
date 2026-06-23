@@ -57,7 +57,8 @@ textarea { resize: vertical; min-height: 80px; }
   backdrop-filter: blur(6px);
   position: sticky; top: 0; z-index: 10;
 }
-.app-bar .brand { font-weight: 700; letter-spacing: -0.02em; }
+.app-bar .brand-logo { height: 22px; width: auto; display: block; }
+.landing-logo { height: 52px; width: auto; display: block; margin-bottom: 4px; }
 .app-bar .spacer { flex: 1; }
 .app-bar .code { font-family: ui-monospace, monospace; background: #fff; border: 1px solid var(--paper-line); padding: 3px 8px; border-radius: 6px; }
 .role-tag { font-size: 12px; padding: 3px 8px; border-radius: 999px; border: 1px solid var(--paper-line); }
@@ -132,7 +133,63 @@ textarea { resize: vertical; min-height: 80px; }
 .metric-box .mb-val { font-size: 12.5px; font-weight: 700; color: var(--ink); margin-top: 2px; }
 .metric-box.empty { border-style: dashed; background: transparent; }
 .metric-box.hill-box { grid-column: 1 / -1; background: #f3f0ea !important; border-color: var(--paper-line) !important; min-height: 0; }
-.metric-box.hill-box .mb-val { font-weight: 400; font-size: 11px; color: var(--ink-soft); }
+.metric-panel { display: flex; gap: 6px; align-items: stretch; grid-template-columns: unset; }
+.metric-panel .metric-threads-wrap { flex: 1 1 0; min-width: 0; max-width: 58%; grid-column: unset; overflow: visible; display: flex; align-items: center; }
+.metric-panel .metric-threads-wrap .diversity-threads { width: 100%; }
+.metric-panel .metric-box.hill-box { flex: 0 0 auto; width: 124px; grid-column: unset; overflow: visible; display: flex; flex-direction: column; justify-content: center; }
+.hill-circles { display: flex; flex-wrap: wrap; gap: 5px; justify-content: center; margin-top: 4px; }
+.hill-circle {
+  width: 45px; height: 45px; border-radius: 50%; box-sizing: border-box;
+  border: 1px solid var(--paper-line); background: #fff;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+.hill-circle b { font-size: 13px; font-weight: 700; color: var(--ink); line-height: 1; }
+.hill-circle i { font-size: 8.5px; font-style: normal; color: var(--ink-soft); margin-top: 2px; }
+.hill-circle.hill-n { background: #f3f0ea; }
+.session-threads { background: #eceae6; border: 1px solid var(--paper-line); border-radius: 10px; padding: 8px 10px; margin: 4px 0; }
+.session-threads svg { display: block; width: 100%; max-width: 520px; height: auto; margin: 0 auto; }
+.session-threads-legend { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 11px; color: var(--ink-soft); margin-bottom: 4px; }
+.session-threads-legend .stl-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+.session-thread-tick { font-size: 9px; fill: var(--ink-soft); }
+.session-threads-qs { list-style: none; margin: 6px 0 0; padding: 6px 0 0; border-top: 1px solid var(--paper-line); display: flex; flex-direction: column; gap: 2px; }
+.session-threads-qs li { display: flex; gap: 6px; font-size: 11px; color: var(--ink-soft); line-height: 1.35; }
+.session-threads-qs li b { color: var(--ink); flex: 0 0 auto; min-width: 22px; }
+.metric-strand { display: block; width: 100%; height: 30px; margin-top: 4px; overflow: visible; }
+.strand-axis { display: flex; margin-top: 2px; }
+.strand-axis span { flex: 1; text-align: center; font-size: 9px; color: var(--ink-soft); }
+.strand-scroll { overflow-x: auto; }
+.strand-label { position: sticky; left: 0; background: #fffdf8; width: fit-content; padding-right: 8px; z-index: 1; }
+.curve-legend { display: grid; grid-template-columns: 58px repeat(3, 1fr); gap: 4px 6px; align-items: center; margin: 6px 0 4px; }
+.curve-legend .cl-row { display: contents; }
+.curve-legend .cl-head span { font-size: 10px; color: var(--ink-soft); text-align: center; }
+.curve-legend .cl-name { font-size: 11px; font-weight: 600; }
+.curve-legend svg { display: block; margin: 0 auto; }
+.hill-circle { cursor: help; }
+.hill-tip {
+  position: fixed; z-index: 9999; pointer-events: none;
+  transform: translate(-50%, calc(-100% - 12px));
+  width: max-content; max-width: 200px; white-space: normal; text-align: left;
+  background: var(--ink); color: var(--paper); font-size: 10.5px; line-height: 1.4;
+  padding: 6px 8px; border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+}
+.metric-threads-wrap { grid-column: 1 / -1; background: #eceae6; border: 1px solid var(--paper-line); border-radius: 8px; padding: 4px 6px 2px; overflow: visible; }
+.diversity-threads { position: relative; width: 100%; overflow: visible; }
+.diversity-threads svg { display: block; width: 100%; max-width: 200px; height: 88px; margin: 0 auto; }
+.diversity-threads.compact svg { height: 72px; max-width: 180px; }
+.diversity-thread-path:hover { stroke-opacity: 1 !important; }
+.diversity-threads-tip {
+  position: fixed; z-index: 9999; pointer-events: none;
+  width: max-content; min-width: 220px; max-width: min(280px, calc(100vw - 24px));
+  padding: 9px 11px; border-radius: 8px; box-sizing: border-box;
+  background: var(--ink); color: #f5f3ef; font-size: 11px; line-height: 1.5;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.18); transform: translate(-50%, calc(-100% - 12px));
+  white-space: normal; word-break: keep-all;
+}
+.diversity-threads-tip .tip-title { font-weight: 600; margin-bottom: 4px; line-height: 1.4; }
+.diversity-threads-tip .tip-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; display: inline-block; vertical-align: middle; margin-right: 6px; }
+.diversity-threads-tip .tip-val { font-weight: 700; margin-bottom: 5px; white-space: nowrap; }
+.diversity-threads-tip .tip-hint { color: #c8c4bc; font-size: 10.5px; line-height: 1.45; }
 .round-head .round-metrics .scale-stat { font-size: 13px; color: var(--ink); }
 .round-head .round-metrics .scale-stat b { font-size: 15px; }
 
@@ -150,9 +207,9 @@ textarea { resize: vertical; min-height: 80px; }
 }
 .density-ctl { display: inline-flex; gap: 3px; }
 .density-ctl button {
-  width: 24px; height: 24px; padding: 0;
+  width: 19px; height: 19px; padding: 0;
   display: inline-flex; align-items: center; justify-content: center;
-  font-size: 13px; line-height: 1; border-radius: 5px;
+  font-size: 10.5px; line-height: 1; border-radius: 4px;
   border: 1px solid var(--paper-line); background: #fff; color: var(--ink-soft);
 }
 .density-ctl button.on { background: var(--ink); color: var(--paper); border-color: var(--ink); }

@@ -62,7 +62,7 @@ export default function Landing() {
   return (
     <div className="centered stack">
       <div>
-        <h1 style={{ marginBottom: 4, letterSpacing: '-0.03em' }}>Polyphony 🎼</h1>
+        <img className="landing-logo" src="/logo.png" alt="Polyphony" />
         <p className="muted" style={{ marginTop: 0 }}>
           다성성(polyphony)을 드러내는 대화 도구 — 우세한 의견 대신, 살아있는 차이를 봅니다.
         </p>

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { createPortal } from 'react-dom'
 import LevelDot from './LevelDot.jsx'
+import { SessionThreads, BandDot, THREAD_COLORS } from './DiversityThreads.jsx'
 import { retrospectiveData } from '../lib/polyphony.js'
 
 // 세션 종료 회고 — 질문별 브리핑·다양성 + 최고/최저 다양성 질문.
@@ -35,21 +36,24 @@ export default function SessionRetrospective({ snapshot }) {
                 </div>
               )}
 
+              {/* 다양성의 흐름 — 라운드별 곡선을 이어서 */}
+              <SessionThreads entries={entries} />
+
               {/* 최고/최저 다양성 질문 */}
               {highest && (
                 <div className="retro-highlights">
                   <div className="retro-hl">
-                    <div className="tiny muted">가장 다양성이 높았던 질문 🟢</div>
+                    <div className="tiny muted">가장 개방성이 높았던 질문 🟢</div>
                     <div className="retro-hl-q">{highest.round.question}</div>
                     <div className="tiny">
-                      <LevelDot value={highest.diversity} withLabel /> 다양성 {Math.round(highest.diversity * 100)}%
+                      <LevelDot value={highest.diversity} withLabel /> 개방성 {Math.round(highest.diversity * 100)}%
                     </div>
                   </div>
                   <div className="retro-hl">
-                    <div className="tiny muted">가장 다양성이 낮았던 질문 🔴</div>
+                    <div className="tiny muted">가장 개방성이 낮았던 질문 🔴</div>
                     <div className="retro-hl-q">{lowest.round.question}</div>
                     <div className="tiny">
-                      <LevelDot value={lowest.diversity} withLabel /> 다양성 {Math.round(lowest.diversity * 100)}%
+                      <LevelDot value={lowest.diversity} withLabel /> 개방성 {Math.round(lowest.diversity * 100)}%
                     </div>
                   </div>
                 </div>
@@ -67,9 +71,16 @@ export default function SessionRetrospective({ snapshot }) {
                         <div className="tiny" style={{ display: 'flex', flexWrap: 'wrap', gap: '2px 10px', margin: '4px 0' }}>
                           {e.metrics.map((m) => (
                             <span key={m.id}>
-                              <span className="level-dot" style={{ background: m.band.color }} /> {m.short} {m.text}
+                              <BandDot band={m.band} color={THREAD_COLORS[m.id]} />
+                              <b style={{ color: THREAD_COLORS[m.id] || '#888' }}>{m.short}</b> {m.text}
                             </span>
                           ))}
+                          {e.agreement && (
+                            <span>
+                              <BandDot band={e.agreement.band} color={THREAD_COLORS.agreement} reverse />
+                              <b style={{ color: THREAD_COLORS.agreement }}>일치도</b> {e.agreement.value.toFixed(2)} · {e.agreement.band.label}
+                            </span>
+                          )}
                           <span className="muted">· 의견 {e.opinionCount}개</span>
                         </div>
                         {e.round.briefing && <div className="summary">{e.round.briefing}</div>}

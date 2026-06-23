@@ -3,6 +3,7 @@ import ClusterCard from './ClusterCard.jsx'
 import ExpandedRound from './ExpandedRound.jsx'
 import { roundMetrics, hillSummary, scoreDistribution, bandAgreement } from '../lib/polyphony.js'
 import ScaleViz from './ScaleViz.jsx'
+import DiversityThreads from './DiversityThreads.jsx'
 
 const DIR_LABEL = { seed: '시작', deepen: '심화 ⤵', shift: '전환 ↔', integrate: '통합 ⊕' }
 const DENSITY_OPTS = [
@@ -26,6 +27,7 @@ export default function Canvas({
   const scrollRef = useRef(null)
   const [density, setDensity] = useState({}) // roundId -> 'full'|'mid'|'min'
   const [expandedId, setExpandedId] = useState(null)
+  const [hillTip, setHillTip] = useState(null) // { text, x, y }
   const rounds = [...(snapshot?.rounds || [])].sort((a, b) => a.index - b.index)
   const expandedRound = rounds.find((r) => r.id === expandedId)
 
@@ -86,26 +88,22 @@ export default function Canvas({
                 const sd = round.responseType === 'scale' ? scoreDistribution(round, snapshot.opinions) : null
                 const aBand = sd ? bandAgreement(sd.A) : null
                 return (
-                  <div className="metric-boxes">
-                    {metrics.map((m) => (
-                      <div key={m.id} className="metric-box" style={{ borderColor: m.band.color, background: `${m.band.color}1f` }}>
-                        <div className="mb-label">{m.label}</div>
-                        <div className="mb-val">{m.text}</div>
-                      </div>
-                    ))}
-                    {sd ? (
-                      <div className="metric-box" style={{ borderColor: aBand.color, background: `${aBand.color}1f` }}>
-                        <div className="mb-label">응답 일치도 A</div>
-                        <div className="mb-val">{sd.A.toFixed(2)} · {aBand.label}</div>
-                      </div>
-                    ) : (
-                      // 척도형이 아니어도 칸을 비워 박스 크기를 일치시킨다
-                      <div className="metric-box empty" aria-hidden="true" />
-                    )}
+                  <div className="metric-boxes metric-panel">
+                    <div className="metric-threads-wrap">
+                      <DiversityThreads
+                        metrics={metrics}
+                        agreement={sd ? { value: sd.A, band: aBand } : null}
+                      />
+                    </div>
                     {H && (
                       <div className="metric-box hill-box">
                         <div className="mb-label">Hill 요약</div>
-                        <div className="mb-val">풍부도 {H.h0} · 실효 {H.h1.toFixed(1)} · 지배 {H.h2.toFixed(1)} (N={H.N})</div>
+                        <div className="hill-circles">
+                          <HillCircle value={H.h0} label="풍부도" tip="풍부도 (Hill0): 등장한 의견 종류 수" onTip={setHillTip} />
+                          <HillCircle value={H.h1.toFixed(1)} label="실효" tip="실효 의견 수 (Hill1): 빈도까지 따졌을 때 사실상 몇 종이 의미 있게 쓰였나" onTip={setHillTip} />
+                          <HillCircle value={H.h2.toFixed(1)} label="지배" tip="실효 지배 수 (Hill2): 실제로 담화를 주도한 의견이 몇 개인가" onTip={setHillTip} />
+                          <HillCircle value={H.N} label="N" tip="N: 응답(참여자) 수" onTip={setHillTip} cls=" hill-n" />
+                        </div>
                       </div>
                     )}
                   </div>
@@ -176,6 +174,23 @@ export default function Canvas({
         onClose={() => setExpandedId(null)}
       />
     )}
+    {hillTip && (
+      <div className="hill-tip" style={{ left: hillTip.x, top: hillTip.y }}>{hillTip.text}</div>
+    )}
     </>
+  )
+}
+
+// Hill 원 — 마우스 좌표를 부모로 올려 fixed 툴팁을 띄운다(스크롤 영역에 안 가리게).
+function HillCircle({ value, label, tip, onTip, cls = '' }) {
+  return (
+    <span
+      className={`hill-circle${cls}`}
+      onMouseEnter={(e) => onTip({ text: tip, x: e.clientX, y: e.clientY })}
+      onMouseMove={(e) => onTip((t) => (t ? { ...t, x: e.clientX, y: e.clientY } : t))}
+      onMouseLeave={() => onTip(null)}
+    >
+      <b>{value}</b><i>{label}</i>
+    </span>
   )
 }

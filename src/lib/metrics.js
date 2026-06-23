@@ -236,12 +236,14 @@ export function retrospectiveData(rounds, clusters, opinions) {
   const sorted = [...rounds].sort((a, b) => a.index - b.index)
   const entries = sorted.map((r) => {
     const cs = clusters.filter((c) => c.roundId === r.id)
+    const sd = r.responseType === 'scale' ? scoreDistribution(r, opinions) : null
     return {
       round: r,
       clusters: cs,
       metrics: roundMetrics(r, clusters, opinions),
       hill: hill(context(r, clusters, opinions)),
       diversity: roundDiversity(r, clusters, opinions),
+      agreement: sd ? { value: sd.A, band: bandAgreement(sd.A) } : null,
       opinionCount: opinions.filter((o) => o.roundId === r.id).length,
       hasClusters: cs.length > 0,
     }
