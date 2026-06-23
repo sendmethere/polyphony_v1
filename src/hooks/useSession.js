@@ -10,14 +10,23 @@ export function useSession(code) {
   useEffect(() => {
     if (!code) return
     setLoading(true)
+    setSnapshot(null)
+    let settled = false
     const unsub = store.subscribe(code, (snap) => {
+      settled = true
       setSnapshot(snap)
       setLoading(false)
     })
-    // 구독 직후에도 존재 여부 확정
-    const initial = store.getSnapshot(code)
-    if (!initial) setLoading(false)
-    return unsub
+    // 비동기 백엔드(Firebase)는 데이터가 도착해야 콜백이 온다.
+    // 도착 전까지 loading 유지 → "찾을 수 없음"이 깜빡이지 않음.
+    // 진짜 없는 세션이 콜백을 안 줄 수도 있어, 안전망 타임아웃으로 not-found 확정.
+    const t = setTimeout(() => {
+      if (!settled) setLoading(false)
+    }, 4000)
+    return () => {
+      clearTimeout(t)
+      unsub()
+    }
   }, [code])
 
   return { snapshot, loading }

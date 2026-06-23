@@ -8,7 +8,7 @@ import Settings from '../components/Settings.jsx'
 import PolyphonyMeter from '../components/PolyphonyMeter.jsx'
 import SessionRetrospective from '../components/SessionRetrospective.jsx'
 import RetrospectiveList from '../components/RetrospectiveList.jsx'
-import { likertStats, roundDiversity } from '../lib/polyphony.js'
+import { hillSummary, scoreDistribution } from '../lib/polyphony.js'
 import { exportSessionXlsx } from '../lib/exportXlsx.js'
 import Guide from '../components/Guide.jsx'
 import PhaseBar from '../components/PhaseBar.jsx'
@@ -101,7 +101,7 @@ export default function AdminView() {
           ? { max: currentRound.scaleMax, minLabel: currentRound.scaleLabels?.min, maxLabel: currentRound.scaleLabels?.max }
           : null
       const res = await generateTestOpinions(currentRound.question, {
-        n: testN,
+        n: Math.max(1, Math.min(40, parseInt(testN, 10) || 8)),
         title: session.title,
         history: priorHistory(),
         diversity: testDiversity,
@@ -123,8 +123,8 @@ export default function AdminView() {
       const ops = roundOpinions.map((o) => ({ id: o.id, text: o.text }))
       let scaleNote = ''
       if (currentRound.responseType === 'scale') {
-        const s = likertStats(currentRound, snapshot.opinions)
-        scaleNote = `${currentRound.scaleMax}점 척도, 응답 ${s.n}개, 평균 ${s.mean.toFixed(2)}, 표준편차 ${s.std.toFixed(2)}, 일치도 ${Math.round(s.agreement * 100)}%.`
+        const s = scoreDistribution(currentRound, snapshot.opinions)
+        if (s) scaleNote = `${currentRound.scaleMax}점 척도, 응답 ${s.N}개, 중앙값 ${s.median}.`
       }
       const res = await clusterOpinions(ops, {
         question: currentRound.question,
@@ -266,20 +266,24 @@ export default function AdminView() {
 
         {/* 진행 패널 */}
         <div style={{ flex: '0 0 340px', borderLeft: '1px solid var(--paper-line)', padding: 18, overflowY: 'auto', minHeight: 0 }}>
-          <Guide
-            sessionClosed={session.status === 'closed'}
-            hasRound={!!currentRound}
-            hasProposal={!!proposal}
-            hasFollowups={!!followups}
-            roundStatus={currentRound?.status}
-            opinionCount={roundOpinions.length}
-            isScale={currentRound?.responseType === 'scale'}
-            diversity={
+          {(() => {
+            const clustered =
               currentRound && (snapshot.clusters || []).some((c) => c.roundId === currentRound.id)
-                ? roundDiversity(currentRound, snapshot.clusters, snapshot.opinions)
-                : null
-            }
-          />
+            const H = clustered ? hillSummary(currentRound, snapshot.clusters, snapshot.opinions) : null
+            return (
+              <Guide
+                sessionClosed={session.status === 'closed'}
+                hasRound={!!currentRound}
+                hasProposal={!!proposal}
+                hasFollowups={!!followups}
+                roundStatus={currentRound?.status}
+                opinionCount={roundOpinions.length}
+                isScale={currentRound?.responseType === 'scale'}
+                diversity={H ? H.openness : null}
+                effective={H ? H.h1 : null}
+              />
+            )
+          })()}
 
           {session.status === 'closed' ? (
             <div className="stack">
@@ -378,7 +382,11 @@ export default function AdminView() {
                         min="1"
                         max="40"
                         value={testN}
-                        onChange={(e) => setTestN(Math.max(1, Math.min(40, +e.target.value || 1)))}
+                        onChange={(e) => setTestN(e.target.value)}
+                        onBlur={(e) => {
+                          const v = parseInt(e.target.value, 10)
+                          if (v) setTestN(String(Math.max(1, Math.min(40, v))))
+                        }}
                         style={{ width: 64 }}
                       />
                     </div>
@@ -400,7 +408,7 @@ export default function AdminView() {
                       ))}
                     </div>
                     <button onClick={seedTestOpinions} disabled={busy === 'seeding'}>
-                      {busy === 'seeding' ? '생성 중…' : `가상 학생 의견 ${testN}개 투입 (다양성 ${{ low: '낮음', mid: '중간', high: '높음' }[testDiversity]})`}
+                      {busy === 'seeding' ? '생성 중…' : `가상 학생 의견 ${Math.max(1, Math.min(40, parseInt(testN, 10) || 8))}개 투입 (다양성 ${{ low: '낮음', mid: '중간', high: '높음' }[testDiversity]})`}
                     </button>
                   </>
                 )}

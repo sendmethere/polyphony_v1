@@ -64,9 +64,13 @@ export default function SessionRetrospective({ snapshot }) {
                     <div className="retro-hl-q" style={{ fontSize: 16 }}>{e.round.question}</div>
                     {e.hasClusters ? (
                       <>
-                        <div className="tiny" style={{ margin: '4px 0' }}>
-                          <LevelDot value={e.diversity} withLabel /> 다양성 {Math.round(e.diversity * 100)}% ·
-                          엔트로피 {Math.round(e.shannon * 100)}% · 의견 {e.opinionCount}개
+                        <div className="tiny" style={{ display: 'flex', flexWrap: 'wrap', gap: '2px 10px', margin: '4px 0' }}>
+                          {e.metrics.map((m) => (
+                            <span key={m.id}>
+                              <span className="level-dot" style={{ background: m.band.color }} /> {m.short} {m.text}
+                            </span>
+                          ))}
+                          <span className="muted">· 의견 {e.opinionCount}개</span>
                         </div>
                         {e.round.briefing && <div className="summary">{e.round.briefing}</div>}
                         <div className="retro-voices">

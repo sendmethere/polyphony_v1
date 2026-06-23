@@ -1,13 +1,8 @@
-import LevelDot from './LevelDot.jsx'
-import { retrospectiveData, likertStats } from '../lib/polyphony.js'
+import { retrospectiveData } from '../lib/polyphony.js'
 
-// 우측 패널용 컴팩트 "질문별 돌아보기" — 최고/최저 다양성 + 라운드별 브리핑.
+// 우측 패널용 컴팩트 "질문별 돌아보기" — 최고/최저 다양성 + 라운드별 지표(레지스트리 기반).
 export default function RetrospectiveList({ snapshot }) {
-  const { entries, highest, lowest } = retrospectiveData(
-    snapshot.rounds,
-    snapshot.clusters,
-    snapshot.opinions
-  )
+  const { entries, highest, lowest } = retrospectiveData(snapshot.rounds, snapshot.clusters, snapshot.opinions)
 
   return (
     <div className="panel stack">
@@ -34,17 +29,13 @@ export default function RetrospectiveList({ snapshot }) {
           <div style={{ fontWeight: 600 }}>{e.round.question}</div>
           {e.hasClusters ? (
             <>
-              <div style={{ margin: '3px 0' }}>
-                <LevelDot value={e.diversity} /> 다양성 {Math.round(e.diversity * 100)}% · 엔트로피 {Math.round(e.shannon * 100)}%
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2px 10px', margin: '3px 0' }}>
+                {e.metrics.map((m) => (
+                  <span key={m.id}>
+                    <span className="level-dot" style={{ background: m.band.color }} /> {m.short} {m.text}
+                  </span>
+                ))}
               </div>
-              {e.round.responseType === 'scale' && (() => {
-                const s = likertStats(e.round, snapshot.opinions)
-                return s.n ? (
-                  <div style={{ margin: '3px 0' }}>
-                    📊 평균 {s.mean.toFixed(2)} · 표준편차 {s.std.toFixed(2)} · 일치도 {Math.round(s.agreement * 100)}%
-                  </div>
-                ) : null
-              })()}
               {e.round.briefing && <div className="muted">{e.round.briefing}</div>}
             </>
           ) : (

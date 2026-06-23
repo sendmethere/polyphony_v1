@@ -10,10 +10,10 @@ export default function InfoButton({ title, children }) {
       </button>
       {open && (
         <div className="modal-backdrop" onClick={() => setOpen(false)}>
-          <div className="modal stack" onClick={(e) => e.stopPropagation()}>
-            <h3 style={{ margin: 0 }}>{title}</h3>
+          <div className="modal stack info-modal" onClick={(e) => e.stopPropagation()}>
+            <h3 style={{ margin: 0, flex: '0 0 auto' }}>{title}</h3>
             <div className="info-body">{children}</div>
-            <div className="row" style={{ justifyContent: 'flex-end' }}>
+            <div className="row" style={{ justifyContent: 'flex-end', flex: '0 0 auto' }}>
               <button className="primary" onClick={() => setOpen(false)}>
                 닫기
               </button>

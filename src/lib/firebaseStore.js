@@ -100,7 +100,9 @@ export const firebaseStore = {
       const entry = { cbs: new Set(), unsub: null }
       entry.unsub = onValue(sRef(code), (snap) => {
         mirror.set(code, toSnapshot(snap.val()))
-        emit(code)
+        const m = mirror.get(code)
+        // 세션이 있으면 스냅샷, 없으면 null 을 직접 통지(없음 확정 → not-found 처리 가능)
+        for (const cb of entry.cbs) cb(m && m.session ? { ...m } : null)
       })
       subs.set(code, entry)
     }

@@ -69,10 +69,14 @@ export default function StudentView() {
     )
   }
 
-  // 학생도 이전 질문들과 그 답변 군집을 볼 수 있다(현재 진행 라운드는 제외 — 아래 입력칸으로 표시).
+  // 학생이 보는 캔버스: 이전 라운드 + "군집화가 끝난" 현재 라운드까지.
+  //  - 수집 중(질문 시작)인 라운드는 숨김(아래 입력칸으로만) → 의견 형성 중엔 결과를 안 보여줌.
+  //  - 현재 라운드도 status==='clustered' 가 되면(군집 끝) 결과를 무대에 노출.
   const historySnapshot = {
     ...snapshot,
-    rounds: (snapshot.rounds || []).filter((r) => r.id !== session.currentRoundId),
+    rounds: (snapshot.rounds || []).filter(
+      (r) => r.id !== session.currentRoundId || r.status === 'clustered'
+    ),
   }
   const hasHistory = historySnapshot.rounds.length > 0
 

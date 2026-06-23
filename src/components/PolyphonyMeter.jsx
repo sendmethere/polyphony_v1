@@ -1,156 +1,98 @@
 import InfoButton from './InfoButton.jsx'
-import LevelDot from './LevelDot.jsx'
-import { divergenceTrend, sessionSummary, metricLevel, likertStats } from '../lib/polyphony.js'
+import { metricTrend, sessionSummary, divergenceTrend } from '../lib/polyphony.js'
 
-const TREND_LABEL = { diverge: '발산 ⇢', converge: '수렴 ⇠', flat: '유지 —' }
 const OVERALL_LABEL = { opened: '전체적으로 열림 ⇢', converged: '전체적으로 모임 ⇠', flat: '대체로 유지 —' }
 
-// 다양성/엔트로피 지표 패널 — 관리자·교사(모니터링) 공용.
-// 우세도가 아니라 "의견이 얼마나 갈라져 있나"를 0~100% 로 보여준다(학생 무대엔 미표시).
+// 다양성 지표 패널 — metrics.js 의 INDICATORS 를 그대로 그린다(지표 교체 시 코드 변경 불필요).
 export default function PolyphonyMeter({ rounds, clusters, opinions }) {
-  const trend = divergenceTrend(rounds, clusters, opinions)
-  const latest = trend[trend.length - 1]
+  const series = metricTrend(rounds, clusters, opinions)
+  const trend = divergenceTrend(rounds, clusters, opinions).filter((s) => clusters.some((c) => c.roundId === s.roundId))
+  const latestTrend = trend[trend.length - 1]
   const summary = sessionSummary(rounds, clusters, opinions)
-
-  // 척도형 라운드의 일치도(agreement) 시리즈 — 응답이 있는 척도형만
-  const agreementSeries = [...rounds]
-    .sort((a, b) => a.index - b.index)
-    .filter((r) => r.responseType === 'scale')
-    .map((r) => {
-      const s = likertStats(r, opinions)
-      return { roundId: r.id, index: r.index, agreement: s.agreement, mean: s.mean, n: s.n }
-    })
-    .filter((x) => x.n > 0)
+  const hasData = series.length > 0 && series[0].points.length > 0
 
   return (
     <div className="panel stack">
       <div className="row" style={{ justifyContent: 'space-between' }}>
-        <h3 style={{ margin: 0 }}>폴리포니 미터</h3>
-        <InfoButton title="폴리포니 미터 — 다양성 지표">
-          <p>
-            두 지표 모두 <b>"어떤 의견이 우세한가"</b>가 아니라 <b>"의견이 얼마나 여러 갈래로, 고르게 갈라져 있나"</b>를 0~100%로 잰 값입니다. 군집 인원수를 쓰므로 학생 무대에는 표시하지 않습니다.
-          </p>
-          <p>
-            <b>Simpson 다양성</b> = 1 − Σ(pᵢ)². 아무 의견 2개를 집었을 때 서로 다른 군집일 확률.
-            큰 그림의 균등함(쏠림 정도)에 민감합니다.
-          </p>
-          <p>
-            <b>Shannon 엔트로피</b> = −Σ pᵢ·ln(pᵢ) 를 ln(의견 수)로 정규화. 다음 의견이 어느 군집일지의
-            예측 불가능성으로, <b>희귀한 소수·외톨이 목소리</b>의 등장에 더 민감합니다.
-          </p>
-          <p>
-            <b>세션 전체</b> 값은 군집이 만들어진 각 라운드의 지표를 <b>평균</b>낸 것입니다(범위=라운드별 최저~최고,
-            방향=첫 라운드 대비 마지막 라운드).
-          </p>
-          <p>
-            <b>척도형 점수 일치도</b>(agreement) = 1 − (표준편차 ÷ 최대표준편차). 점수가 한 곳으로 모일수록
-            높음(100%), 양극단으로 갈릴수록 낮음(0%).
-          </p>
-          <p>
-            ⚠️ <b>대화주의에서 일치도가 높다고 "좋은" 게 아닙니다.</b> 모두 같은 점수로 모인 것은 오히려
-            <b> 한 목소리로의 수렴(monologic)</b>에 가까운 신호예요. 그래서 좋음/나쁨을 암시하지 않으려고
-            신호등 색 대신 <b>무채색 회색</b>으로 표시합니다.
-          </p>
-          <p>
-            중요: <b>점수의 일치 ≠ 목소리의 일치</b>. 같은 점수라도 그 이유(주관식)는 제각각일 수 있습니다.
-            "같은 점수, 다른 이유"는 표면 아래 다성성이 살아있는 상태예요. 일치도는 반드시 위의 텍스트 다양성과
-            <b> 나란히</b> 읽으세요.
-          </p>
-          <p>
-            <b>신호등</b>: <span style={{ color: '#b5482f' }}>● 낮음</span>(0~32%) ·{' '}
-            <span style={{ color: '#c98a2b' }}>● 중간</span>(33~65%) ·{' '}
-            <span style={{ color: '#2e7d52' }}>● 높음</span>(66~100%). 낮음이 "나쁨"은 아닙니다 — 대화가 한 곳으로 모인
-            수렴 국면일 수 있어요. 추이와 함께 읽으세요.
-          </p>
-          <p className="tiny muted">
-            (pᵢ = i번째 군집의 의견 수 ÷ 그 라운드 전체 의견 수. 둘 다 군집이 많고 고를수록 1에 가까워집니다.
-            AI 군집화 결과에 의존하므로 절대값보다 추이로 읽으세요.)
-          </p>
+        <h3 style={{ margin: 0 }}>다양성 지표</h3>
+        <InfoButton title="이 숫자들, 어떻게 읽나요?">
+          <p>"몇 개의 의견이 있었나"를 넘어 <b>얼마나 열린 의미 공간이 만들어졌는지</b>를 봅니다. (학생 화면에는 보이지 않습니다.)</p>
+
+          <p className="info-term">먼저, 세 가지 기본 수 (Hill)</p>
+          <p><b>풍부도</b> = 등장한 의견 종류 수.<br />
+          <b>실효 의견 수</b> = 빈도까지 따졌을 때 "사실상 몇 종"이 의미 있게 쓰였나.<br />
+          <b>실효 지배 수</b> = 실제로 담화를 주도한 의견이 몇 개인가.<br />
+          <span className="muted">예: 4종이 나왔지만 실효 2.6, 지배 1.9 → 사실상 두 갈래가 주도.</span></p>
+
+          <p className="info-term">관점 개방성</p>
+          <p>참여자 수 대비 실효 의견 수입니다. <b>인원에 비해 얼마나 다양한 목소리가 나왔나.</b>
+          <br /><Band c="#b5482f">낮음</Band> · <Band c="#c98a2b">보통</Band> · <Band c="#2e7d52">높음</Band>
+          <br /><span className="muted">참여자가 많으면(예: 20명+) 구조적으로 값이 작게 나옵니다. 절대치보다 추이로 보세요.</span></p>
+
+          <p className="info-term">관점 균형성</p>
+          <p>등장한 의견들이 얼마나 <b>고르게</b> 쓰였나(쏠림이 적을수록 높음).
+          <br /><Band c="#b5482f">낮음</Band> 몇몇 의견에 편중 · <Band c="#c98a2b">보통</Band> · <Band c="#2e7d52">높음</Band> 골고루</p>
+
+          <p className="info-term">소수 의견 비율</p>
+          <p>가장 많은 의견에 속하지 <b>않은</b> 학생의 비율입니다.
+          <br /><Band c="#b5482f">낮음</Band> 한 의견이 다수 지배 · <Band c="#c98a2b">보통</Band> · <Band c="#2e7d52">높음</Band> 소수 목소리가 많음</p>
+
+          <p className="info-term">응답 일치도 A <span className="muted">(점수형 질문에서만)</span></p>
+          <p>점수가 한 곳에 모였는지(+1) ↔ 양 끝으로 갈렸는지(−1)를 나타냅니다.
+          <br /><b style={{ color: '#6b3fa0' }}>양극화</b>(A&lt;0) 두 진영으로 갈림 · <Band c="#b5482f">합의 낮음</Band> · <Band c="#c98a2b">중간</Band> · <Band c="#2e7d52">높음</Band> 한 점에 합의
+          <br />"<b>어디로</b> 모였는지"는 알려주지 않으니 <b>중앙값</b>과 함께 보세요. 합의가 곧 좋음은 아니며, <b>양극화·흩어짐이 더 풍부한 대화의 신호</b>일 수 있습니다.</p>
+
+          <p className="info-term">한 가지 주의</p>
+          <p>높다고 좋은 것도, 낮다고 나쁜 것도 아닙니다. 펼치는 국면엔 높고 모으는 국면엔 낮아집니다. 한 시점보다 <b>라운드별 추이(막대)</b>를 보세요.</p>
+
+          <p className="tiny muted">막대는 라운드별 값입니다. 통계 정의·공식은 stat.md.</p>
         </InfoButton>
       </div>
 
-      {latest && (clusters || []).length > 0 ? (
+      {hasData ? (
         <>
           {summary.count > 0 && (
             <div className="summary-box">
               <div className="tiny" style={{ fontWeight: 700 }}>세션 전체 ({summary.count}개 라운드)</div>
-              <div className="tiny">
-                평균 Simpson <b>{Math.round(summary.avgDiversity * 100)}%</b> · 평균 Shannon{' '}
-                <b>{Math.round(summary.avgShannon * 100)}%</b>
-              </div>
+              <div className="tiny">평균 다양성 <b>{Math.round(summary.avg * 100)}%</b></div>
               <div className="tiny muted">
-                범위 {Math.round(summary.minDiversity * 100)}~{Math.round(summary.maxDiversity * 100)}% ·{' '}
-                {OVERALL_LABEL[summary.overall]}
+                범위 {Math.round(summary.min * 100)}~{Math.round(summary.max * 100)}%
+                {latestTrend ? ` · ${OVERALL_LABEL[summary.overall]}` : ''}
               </div>
             </div>
           )}
 
-          <div className="tiny" style={{ fontWeight: 600, marginTop: 8 }}>
-            <LevelDot value={latest.diversity} withLabel /> Simpson 다양성{' '}
-            <b>{Math.round(latest.diversity * 100)}%</b> · {TREND_LABEL[latest.trend]}
-          </div>
-          <Bars trend={trend} field="diversity" />
-          <div className="tiny" style={{ fontWeight: 600, marginTop: 10 }}>
-            <LevelDot value={latest.shannon} withLabel /> Shannon 엔트로피{' '}
-            <b>{Math.round(latest.shannon * 100)}%</b>
-          </div>
-          <Bars trend={trend} field="shannon" />
-
-          {/* 척도형 일치도 — 무채색 (다양성 신호등과 구분) */}
-          {agreementSeries.length > 0 && (
-            <>
-              <div className="tiny" style={{ fontWeight: 600, marginTop: 12 }}>
-                척도형 점수 일치도{' '}
-                <b>{Math.round(agreementSeries[agreementSeries.length - 1].agreement * 100)}%</b>
-                <span className="muted" style={{ fontWeight: 400 }}> · 수렴 신호</span>
+          {series.map((s) => {
+            const last = s.points[s.points.length - 1]
+            return (
+              <div key={s.id}>
+                <div className="tiny" style={{ fontWeight: 600, marginTop: 10 }}>
+                  <Dot c={last.band.color} /> {s.label} <b>{last.text}</b>
+                </div>
+                <div className="row" style={{ gap: 4, alignItems: 'flex-end', height: 48, marginTop: 6 }}>
+                  {s.points.map((p) => (
+                    <div
+                      key={p.roundId}
+                      title={`라운드 ${p.index + 1}: ${p.text}`}
+                      style={{ flex: 1, height: `${Math.max(4, p.barValue * 100)}%`, background: p.band.color, borderRadius: 3 }}
+                    />
+                  ))}
+                </div>
               </div>
-              <div className="row" style={{ gap: 4, alignItems: 'flex-end', height: 48, marginTop: 6 }}>
-                {agreementSeries.map((a) => (
-                  <div
-                    key={a.roundId}
-                    title={`라운드 ${a.index + 1}: 일치도 ${Math.round(a.agreement * 100)}% · 평균 ${a.mean.toFixed(2)}`}
-                    style={{
-                      flex: 1,
-                      height: `${Math.max(4, a.agreement * 100)}%`,
-                      background: '#8a857a',
-                      borderRadius: 3,
-                    }}
-                  />
-                ))}
-              </div>
-              <div className="tiny muted">
-                점수가 모일수록 높음 = 수렴. <b>높다고 좋은 게 아닙니다</b> — 한 목소리로 모였다는 신호.
-                같은 점수라도 이유(텍스트)는 다를 수 있으니 위 다양성과 함께 보세요.
-              </div>
-            </>
-          )}
+            )
+          })}
         </>
       ) : (
-        <div className="tiny muted">군집화가 완료되면 다양성·엔트로피가 표시됩니다.</div>
+        <div className="tiny muted">군집화가 완료되면 다양성 지표가 표시됩니다.</div>
       )}
     </div>
   )
 }
 
-function Bars({ trend, field }) {
-  return (
-    <div className="row" style={{ gap: 4, alignItems: 'flex-end', height: 48, marginTop: 6 }}>
-      {trend.map((t) => {
-        const v = t[field] || 0
-        const lv = metricLevel(v)
-        return (
-          <div
-            key={t.roundId}
-            title={`라운드 ${t.index + 1}: ${Math.round(v * 100)}% (${lv.label})`}
-            style={{
-              flex: 1,
-              height: `${Math.max(4, v * 100)}%`,
-              background: lv.color,
-              borderRadius: 3,
-            }}
-          />
-        )
-      })}
-    </div>
-  )
+function Dot({ c }) {
+  return <span className="level-dot" style={{ background: c }} />
+}
+
+function Band({ c, children }) {
+  return <b style={{ color: c }}>{children}</b>
 }

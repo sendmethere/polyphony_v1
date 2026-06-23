@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import ClusterCard from './ClusterCard.jsx'
 import ExpandedRound from './ExpandedRound.jsx'
-import { roundDiversity, roundShannon, metricBand } from '../lib/polyphony.js'
-import LevelDot from './LevelDot.jsx'
+import { roundMetrics, hillSummary, scoreDistribution, bandAgreement } from '../lib/polyphony.js'
 import ScaleViz from './ScaleViz.jsx'
 
 const DIR_LABEL = { seed: '시작', deepen: '심화 ⤵', shift: '전환 ↔', integrate: '통합 ⊕' }
@@ -81,17 +80,34 @@ export default function Canvas({
               <div className="q">{round.question}</div>
               <div className={`dir ${round.direction}`}>{DIR_LABEL[round.direction] || ''}</div>
               {showMetrics && clusters.length > 0 && (() => {
-                const div = roundDiversity(round, snapshot.clusters, snapshot.opinions)
-                const sh = roundShannon(round, snapshot.clusters, snapshot.opinions)
-                const band = metricBand((div + sh) / 2) // 두 지표 평균 수준으로 배경색
+                const metrics = roundMetrics(round, snapshot.clusters, snapshot.opinions)
+                if (!metrics.length) return null
+                const H = hillSummary(round, snapshot.clusters, snapshot.opinions)
+                const sd = round.responseType === 'scale' ? scoreDistribution(round, snapshot.opinions) : null
+                const aBand = sd ? bandAgreement(sd.A) : null
                 return (
-                  <div
-                    className="round-metrics"
-                    style={{ background: band.bg, borderColor: band.border }}
-                    title="이 질문의 의견 다양성 / 엔트로피 (학생 무대엔 비공개)"
-                  >
-                    <span><LevelDot value={div} /> 다양성 {Math.round(div * 100)}%</span>
-                    <span><LevelDot value={sh} /> 엔트로피 {Math.round(sh * 100)}%</span>
+                  <div className="metric-boxes">
+                    {metrics.map((m) => (
+                      <div key={m.id} className="metric-box" style={{ borderColor: m.band.color, background: `${m.band.color}1f` }}>
+                        <div className="mb-label">{m.label}</div>
+                        <div className="mb-val">{m.text}</div>
+                      </div>
+                    ))}
+                    {sd ? (
+                      <div className="metric-box" style={{ borderColor: aBand.color, background: `${aBand.color}1f` }}>
+                        <div className="mb-label">응답 일치도 A</div>
+                        <div className="mb-val">{sd.A.toFixed(2)} · {aBand.label}</div>
+                      </div>
+                    ) : (
+                      // 척도형이 아니어도 칸을 비워 박스 크기를 일치시킨다
+                      <div className="metric-box empty" aria-hidden="true" />
+                    )}
+                    {H && (
+                      <div className="metric-box hill-box">
+                        <div className="mb-label">Hill 요약</div>
+                        <div className="mb-val">풍부도 {H.h0} · 실효 {H.h1.toFixed(1)} · 지배 {H.h2.toFixed(1)} (N={H.N})</div>
+                      </div>
+                    )}
                   </div>
                 )
               })()}

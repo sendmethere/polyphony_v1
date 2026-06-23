@@ -1,9 +1,9 @@
 import * as XLSX from 'xlsx'
-import { roundDiversity, roundShannon, likertStats } from './polyphony.js'
+import { roundReport } from './polyphony.js'
 
 const r2 = (x) => Math.round(x * 100) / 100
 
-// 세션 스냅샷을 .xlsx 로 내보낸다. 시트: 라운드 / 의견 / 군집.
+// 세션 스냅샷을 .xlsx 로 내보낸다. 시트: 라운드 / 의견 / 군집. (지표 정의는 stat.md)
 export function exportSessionXlsx(snapshot) {
   const { session, rounds, opinions, clusters, participants } = snapshot
   const nameOf = (id) => participants.find((p) => p.id === id)?.nickname || id
@@ -11,18 +11,22 @@ export function exportSessionXlsx(snapshot) {
 
   const roundsSheet = sorted.map((r) => {
     const isScale = r.responseType === 'scale'
-    const lk = isScale ? likertStats(r, opinions) : null
+    const { hill: H, dist } = roundReport(r, clusters, opinions)
     return {
       라운드: r.index + 1,
       질문: r.question,
       유형: isScale ? `척도형(${r.scaleMax}점)` : '서술형',
       방향: r.direction,
       브리핑: r.briefing || '',
-      다양성: r2(roundDiversity(r, clusters, opinions)),
-      엔트로피: r2(roundShannon(r, clusters, opinions)),
-      평균: lk ? r2(lk.mean) : '',
-      표준편차: lk ? r2(lk.std) : '',
-      일치도: lk ? r2(lk.agreement) : '',
+      'N(참여)': H ? H.N : '',
+      'Hill0 풍부도': H ? H.h0 : '',
+      'Hill1 실효의견수': H ? r2(H.h1) : '',
+      'Hill2 실효지배수': H ? r2(H.h2) : '',
+      '개방성(Hill1/N)': H ? r2(H.openness) : '',
+      '균형성(Hill1/Hill0)': H && H.evenness != null ? r2(H.evenness) : '',
+      '우점도 d': H ? r2(H.d) : '',
+      '소수의견 1-d': H ? r2(H.minority) : '',
+      '척도 중앙값': dist ? dist.median : '',
     }
   })
 

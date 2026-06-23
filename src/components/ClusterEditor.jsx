@@ -44,7 +44,8 @@ export default function ClusterEditor({ code, round, snapshot, onClose }) {
   }
 
   return createPortal(
-    <div className="modal-backdrop" onClick={onClose}>
+    // 바깥 클릭으로 닫히지 않게(편집 중 실수 방지) — 닫기/취소 버튼으로만 닫는다.
+    <div className="modal-backdrop">
       <div className="expanded editor" onClick={(e) => e.stopPropagation()}>
         <div className="editor-scroll">
           <div className="row" style={{ justifyContent: 'space-between', alignItems: 'flex-start' }}>
@@ -92,7 +93,7 @@ export default function ClusterEditor({ code, round, snapshot, onClose }) {
 
           {/* 미분류 의견 */}
           <h3 style={{ marginBottom: 6 }}>미분류 의견 ({unassigned.length})</h3>
-          <div className="stack" style={{ gap: 6 }}>
+          <div className="stack" style={{ gap: 0 }}>
             {unassigned.length === 0 && <div className="tiny muted">모든 의견이 분류에 들어갔습니다.</div>}
             {unassigned.map((o) => (
               <div key={o.id} className="op editor-unassigned">
@@ -100,16 +101,23 @@ export default function ClusterEditor({ code, round, snapshot, onClose }) {
                   {typeof o.score === 'number' && <span className="op-score">{o.score}점</span>}
                   {o.text}
                 </span>
-                <select
-                  value=""
-                  onChange={(e) => e.target.value && assign(o.id, e.target.value)}
-                  style={{ width: 'auto', flex: '0 0 auto' }}
-                >
-                  <option value="">분류에 넣기…</option>
-                  {clusters.map((c) => (
-                    <option key={c.id} value={c.id}>{c.label || '(이름 없음)'}</option>
-                  ))}
-                </select>
+                <div className="assign-btns">
+                  {clusters.length === 0 ? (
+                    <span className="tiny muted">먼저 분류를 추가하세요</span>
+                  ) : (
+                    clusters.map((c) => (
+                      <button
+                        key={c.id}
+                        className="choice"
+                        style={{ padding: '3px 9px' }}
+                        onClick={() => assign(o.id, c.id)}
+                        title={`"${c.label || '이름 없음'}"에 넣기`}
+                      >
+                        {c.label || '(이름 없음)'}
+                      </button>
+                    ))
+                  )}
+                </div>
               </div>
             ))}
           </div>
