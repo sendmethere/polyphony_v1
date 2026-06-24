@@ -63,7 +63,7 @@ export default function Landing() {
     <div className="centered stack">
       <div>
         <img className="landing-logo" src="/logo.png" alt="Polyphony" />
-        <p className="muted" style={{ marginTop: 0 }}>
+        <p className="muted" style={{ marginTop: 16 }}>
           다성성(polyphony)을 드러내는 대화 도구 — 우세한 의견 대신, 살아있는 차이를 봅니다.
         </p>
       </div>
@@ -183,6 +183,8 @@ export default function Landing() {
       </p>
       <p className="tiny">
         <a className="linklike" onClick={() => nav('/help')}>📖 사용 방법 보기</a>
+        {' · '}
+        <a className="linklike" onClick={() => nav('/about')}>🎼 대화주의 이야기</a>
       </p>
     </div>
   )

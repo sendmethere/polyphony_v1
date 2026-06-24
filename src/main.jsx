@@ -7,6 +7,7 @@ import StudentView from './views/StudentView.jsx'
 import AdminView from './views/AdminView.jsx'
 import TeacherView from './views/TeacherView.jsx'
 import Help from './views/Help.jsx'
+import About from './views/About.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -17,6 +18,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/s/:code/admin" element={<AdminView />} />
         <Route path="/s/:code/teacher" element={<TeacherView />} />
         <Route path="/help" element={<Help />} />
+        <Route path="/about" element={<About />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
