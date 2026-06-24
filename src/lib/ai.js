@@ -84,7 +84,16 @@ function parseJson(text) {
   const start = body.indexOf('{')
   const end = body.lastIndexOf('}')
   if (start === -1 || end === -1) throw new Error('JSON 파싱 실패')
-  return JSON.parse(body.slice(start, end + 1))
+  const slice = body.slice(start, end + 1)
+  try {
+    return JSON.parse(slice)
+  } catch {
+    // 모델이 가끔 객체 사이 쉼표를 빠뜨리거나 트레일링 쉼표를 남김 → 흔한 실수만 보정 후 재시도
+    const repaired = slice
+      .replace(/}\s*{/g, '},{') // 배열 원소 사이 누락된 쉼표
+      .replace(/,\s*([}\]])/g, '$1') // 트레일링 쉼표
+    return JSON.parse(repaired)
+  }
 }
 
 // ── 1) 군집화 ──────────────────────────────────────────────
