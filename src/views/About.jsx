@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import ScrollWave from '../components/ScrollWave.jsx'
 
 // 대화주의(Dialogism) 소개 — Help 페이지와 같은 레이아웃/스타일을 그대로 쓴다.
 export default function About() {
@@ -11,6 +12,7 @@ export default function About() {
         <span className="spacer" />
         <button className="ghost" onClick={() => nav('/help')}>📖 사용 방법</button>
         <button className="ghost" onClick={() => nav('/')}>← 메인으로</button>
+        <ScrollWave />
       </div>
 
       <div className="help-body">
@@ -38,19 +40,30 @@ export default function About() {
         </p>
 
         <h2>2. 전달주의 · 구성주의와 어떻게 다른가요?</h2>
-        <p>
-          <b>전달주의(Transmission)와의 차이</b><br />
-          전달주의는 교사가 이미 정해진 '절대적인 지식'을 아이들의 머릿속에 일방적으로 넣어주려 합니다.
-          반면 대화주의에서는 모든 지식을 <b>'질문해 볼 수 있는 대상'</b>으로 봅니다.
-          교사는 지식의 전달자가 아니라, 아이들을 인류의 역사적·문화적인 '대화' 속으로 초대하는 안내자가 됩니다.
-        </p>
-        <p>
-          <b>구성주의(Constructivism)와의 차이</b><br />
-          기존의 사회적 구성주의는 모둠 활동을 통해 아이들이 서로 타협·합의하여 '하나의 공통된 결과물(지식)'을
-          만드는 데 집중하는 경향이 있습니다. 하지만 대화주의는 무리하게 하나의 정답으로 합의(common ground)를
-          끌어내려 하지 않습니다. 대신 아이들이 서로의 <b>'차이'를 존중하며 질문하고 소통하는 대화의 과정 그 자체</b>를
-          교육의 가장 중요한 목적으로 삼습니다.
-        </p>
+        <div className="about-cmp">
+          <div className="cmp-card">
+            <span className="cmp-kicker">Transmission</span>
+            <h3>전달주의</h3>
+            <p>
+              교사가 이미 정해진 '절대적인 지식'을 아이들의 머릿속에 일방적으로 넣어주려 합니다.
+            </p>
+            <span className="cmp-vs">
+              <b>대화주의는</b> 모든 지식을 '질문해 볼 수 있는 대상'으로 봅니다. 교사는 전달자가 아니라,
+              아이들을 인류의 역사적·문화적인 '대화' 속으로 초대하는 <b>안내자</b>가 됩니다.
+            </span>
+          </div>
+          <div className="cmp-card">
+            <span className="cmp-kicker">Constructivism</span>
+            <h3>구성주의</h3>
+            <p>
+              모둠 활동으로 서로 타협·합의하여 '하나의 공통된 결과물(지식)'을 만드는 데 집중하는 경향이 있습니다.
+            </p>
+            <span className="cmp-vs">
+              <b>대화주의는</b> 무리하게 하나의 정답으로 합의(common ground)하지 않습니다. 서로의
+              <b> '차이'를 존중하며 질문하고 소통하는 과정 그 자체</b>를 교육의 목적으로 삼습니다.
+            </span>
+          </div>
+        </div>
 
         <h2>3. 어떤 수업을 지향하나요?</h2>
         <p>
@@ -59,11 +72,33 @@ export default function About() {
           만나 엮이고 상호작용할 때 새로운 의미가 창조되는 비가시적인 <b>'차이와 틈'</b>을 의미합니다.
         </p>
         <p>이 대화적 공간을 <b>열고(Opening) · 넓히고(Widening) · 깊게 만드는(Deepening)</b> 수업을 지향합니다.</p>
+
+        <p style={{ marginBottom: 0 }}>
+          <b>정답 확인(IRE)에서 생각 이어가기(IRF)로.</b> 묻고 답하면 "맞았어/틀렸어"로 평가하고 끝내는 대신,
+          후속 질문으로 대화가 꼬리에 꼬리를 물게 합니다.
+        </p>
+        <div className="ire-flow">
+          <div className="ire-row">
+            <span className="ire-tag">IRE</span>
+            <div className="ire-step"><span className="ire-k">I · 질문</span><div className="ire-t">교사가 묻는다</div></div>
+            <span className="ire-arrow">→</span>
+            <div className="ire-step"><span className="ire-k">R · 응답</span><div className="ire-t">학생이 답한다</div></div>
+            <span className="ire-arrow">→</span>
+            <div className="ire-step stop"><span className="ire-k">E · 평가</span><div className="ire-t">"맞았어 / 틀렸어"</div></div>
+            <span className="ire-end">⊣ 대화 끝</span>
+          </div>
+          <div className="ire-row">
+            <span className="ire-tag">IRF</span>
+            <div className="ire-step"><span className="ire-k">I · 질문</span><div className="ire-t">교사가 묻는다</div></div>
+            <span className="ire-arrow">→</span>
+            <div className="ire-step"><span className="ire-k">R · 응답</span><div className="ire-t">학생이 답한다</div></div>
+            <span className="ire-arrow">→</span>
+            <div className="ire-step go"><span className="ire-k">F · 후속</span><div className="ire-t">"왜 그렇게 생각했어?"</div></div>
+            <span className="ire-end cont">↻ 대화 계속</span>
+          </div>
+        </div>
+
         <ul>
-          <li>
-            <b>정답 확인(IRE) → 생각 이어가기(IRF)</b> — "맞았어/틀렸어"로 평가하고 끝내는 전통적 방식에서 벗어나,
-            "왜 그렇게 생각했어?", "다른 증거가 있을까?" 같은 <b>후속 질문(Follow-up)</b>으로 대화가 꼬리에 꼬리를 물게 합니다.
-          </li>
           <li>
             <b>열기(Opening)</b> — '어린이를 위한 철학'처럼 서로 존중하고 열린 질문을 던지는 규칙을 세워,
             아이들이 안심하고 자기 생각을 말할 수 있게 합니다.

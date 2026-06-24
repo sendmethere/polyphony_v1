@@ -458,6 +458,13 @@ a.linklike { color: var(--ink); text-decoration: underline; cursor: pointer; }
 
 /* 사용 방법 페이지 */
 .help-wrap { min-height: 100vh; }
+
+/* 읽기 진행도 물결 — app-bar 밑줄처럼 깔리고 스크롤한 만큼 채워진다 */
+.help-wrap .app-bar { border-bottom: none; }
+.scroll-wave { position: absolute; left: 0; right: 0; bottom: -8px; height: 14px; line-height: 0; pointer-events: none; }
+.scroll-wave svg { display: block; }
+.scroll-wave .sw-track { stroke: var(--paper-line); stroke-width: 2; }
+.scroll-wave .sw-fill { stroke-width: 2.5; stroke-linecap: round; transition: stroke-dashoffset 0.1s linear; }
 .help-body { max-width: 760px; margin: 0 auto; padding: 28px 24px 80px; }
 .help-body h1 { letter-spacing: -0.02em; }
 .help-body h2 { margin-top: 34px; font-size: 19px; border-top: 1px solid var(--paper-line); padding-top: 22px; }
@@ -473,3 +480,26 @@ a.linklike { color: var(--ink); text-decoration: underline; cursor: pointer; }
 }
 .help-fig figcaption { font-size: 12.5px; color: var(--ink-soft); margin-top: 6px; }
 .help-body code { background: #f1ede3; padding: 1px 5px; border-radius: 4px; font-size: 12px; }
+
+/* About — 전달주의/구성주의 2칼럼 비교 */
+.about-cmp { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0 6px; }
+.about-cmp .cmp-card { border: 1px solid var(--paper-line); border-radius: 10px; padding: 16px 18px; background: #fff; box-shadow: var(--shadow); }
+.about-cmp .cmp-card .cmp-kicker { font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); }
+.about-cmp .cmp-card h3 { margin: 3px 0 10px; font-size: 16px; letter-spacing: -0.01em; }
+.about-cmp .cmp-card p { font-size: 13.5px; line-height: 1.6; margin: 0; }
+.about-cmp .cmp-card .cmp-vs { display: block; margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--paper-line); font-size: 13px; line-height: 1.6; }
+.about-cmp .cmp-card .cmp-vs b { color: var(--ink); }
+@media (max-width: 560px) { .about-cmp { grid-template-columns: 1fr; } }
+
+/* About — IRE / IRF 흐름 박스 */
+.ire-flow { display: flex; flex-direction: column; gap: 14px; margin: 16px 0 6px; }
+.ire-row { display: flex; align-items: stretch; gap: 8px; flex-wrap: wrap; }
+.ire-tag { flex: 0 0 46px; display: flex; align-items: center; font-weight: 700; font-size: 12px; color: var(--ink-soft); }
+.ire-step { flex: 1; min-width: 92px; border: 1px solid var(--paper-line); border-radius: 8px; padding: 8px 11px; background: #fff; }
+.ire-step .ire-k { font-size: 10px; letter-spacing: 0.04em; color: var(--ink-soft); }
+.ire-step .ire-t { font-size: 12.5px; line-height: 1.35; margin-top: 2px; }
+.ire-step.stop { border-style: dashed; background: #f3f0ea; }
+.ire-step.go { border-color: var(--ink); }
+.ire-arrow { display: flex; align-items: center; color: var(--ink-soft); font-size: 15px; }
+.ire-end { display: flex; align-items: center; font-size: 12px; color: var(--ink-soft); padding-left: 2px; }
+.ire-end.cont { color: var(--ink); }

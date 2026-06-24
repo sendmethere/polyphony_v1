@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import ScrollWave from '../components/ScrollWave.jsx'
 
 // 이미지 자리표시자. /public/help_image_N.png 를 넣으면 자동 표시되고,
 // 없으면 캡션 박스만 보인다. (캡션 텍스트 = 어떤 장면을 넣을지 안내)
@@ -36,6 +37,7 @@ export default function Help() {
         <span className="spacer" />
         <button className="ghost" onClick={() => nav('/about')}>🎼 대화주의 이야기</button>
         <button className="ghost" onClick={() => nav('/')}>← 메인으로</button>
+        <ScrollWave />
       </div>
 
       <div className="help-body">
