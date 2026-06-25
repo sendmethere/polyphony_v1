@@ -40,7 +40,7 @@ export default function StudentView() {
   if (!session) return <div className="waiting">세션을 찾을 수 없습니다.</div>
 
   const isScale = currentRound?.responseType === 'scale'
-  const canSubmit = currentRound && (isScale ? score != null : text.trim())
+  const canSubmit = currentRound && !session.locked && (isScale ? score != null : text.trim())
 
   function submit() {
     if (!canSubmit) return
@@ -120,7 +120,9 @@ export default function StudentView() {
             <div className="q" style={{ fontSize: 17, marginBottom: 8 }}>
               {currentRound.question}
             </div>
-            {currentRound.status === 'collecting' ? (
+            {session.locked ? (
+              <div className="pulse tiny muted">🔒 이 세션은 잠겨 있어 읽기 전용입니다. 응답을 제출·수정할 수 없습니다.</div>
+            ) : currentRound.status === 'collecting' ? (
               <div className="stack" style={{ gap: 8 }}>
                 {isScale && (
                   <div className="likert">

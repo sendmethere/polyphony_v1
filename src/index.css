@@ -77,7 +77,7 @@ textarea { resize: vertical; min-height: 80px; }
   display: flex;
   gap: 28px;
   overflow-x: auto;
-  padding: 24px 24px 32px;
+  padding: 4px 24px;
   align-items: stretch;
   /* 부모가 높이를 주면 100%로 채워 칼럼 내부 스크롤이 생기고,
      부모 높이가 없으면 내용 높이로 자연 증가한다(회고 등) */
@@ -267,6 +267,18 @@ textarea { resize: vertical; min-height: 80px; }
 .role-pick-emoji { font-size: 38px; line-height: 1; }
 .role-pick-title { font-size: 17px; font-weight: 700; }
 
+/* 메인 하단 내비 버튼 (사용방법 / 대화주의) */
+.nav-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.nav-pill {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 9px 16px; border-radius: 999px;
+  border: 1px solid var(--paper-line); background: #fffdf8; color: var(--ink);
+  font-size: 13px; font-weight: 600; cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, transform 0.15s, box-shadow 0.15s;
+}
+.nav-pill:hover { border-color: var(--ink); background: #fff; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.07); }
+.nav-pill .nav-emoji { font-size: 16px; line-height: 1; }
+
 /* 최근 세션 목록 */
 .recent-item {
   display: flex; align-items: center; gap: 8px; width: 100%; text-align: left;
@@ -455,6 +467,19 @@ textarea { resize: vertical; min-height: 80px; }
 .waiting .pulse { font-size: 13px; color: var(--ink-soft); }
 
 a.linklike { color: var(--ink); text-decoration: underline; cursor: pointer; }
+
+/* 관리자 세션 표 */
+.admin-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.admin-table th, .admin-table td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--paper-line); }
+.admin-table th { font-size: 11px; font-weight: 600; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.04em; }
+.admin-table tbody tr:hover { background: #faf8f3; }
+.admin-table td.actions { text-align: right; white-space: nowrap; }
+.admin-table .actions button { padding: 4px 10px; font-size: 12px; margin-left: 6px; }
+.admin-table .pill { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; }
+.admin-table .pill.active { background: #eef4ff; color: #2b5cc4; }
+.admin-table .pill.closed { background: #f0ece3; color: var(--ink-soft); }
+.admin-table .pill.locked { background: #fbe9d8; color: #b5651d; }
+.pager { display: flex; gap: 8px; align-items: center; justify-content: center; margin-top: 16px; }
 
 /* 사용 방법 페이지 */
 .help-wrap { min-height: 100vh; }

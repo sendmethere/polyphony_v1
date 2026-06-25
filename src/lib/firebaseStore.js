@@ -44,6 +44,10 @@ const clean = (obj) => {
 const mirror = new Map() // code -> snapshot
 const subs = new Map() // code -> { cbs:Set, unsub }
 
+// 잠긴 세션은 읽기 전용 — 모든 쓰기(의견 편집·재개 등)를 막는다.
+// 잠금 자체는 setLocked 가 별도로 처리(가드 우회)하므로 잠금 해제는 가능.
+const isLocked = (code) => mirror.get(code)?.session?.locked === true
+
 function toSnapshot(val) {
   const v = val || {}
   return {
@@ -120,6 +124,7 @@ export const firebaseStore = {
   },
 
   updateSession(code, patch) {
+    if (isLocked(code)) return
     const m = ensure(code)
     if (m.session) m.session = { ...m.session, ...patch }
     emit(code)
@@ -136,6 +141,7 @@ export const firebaseStore = {
   },
 
   addRound(code, { question, direction = 'seed', parentRoundId = null, responseType = 'open', scaleMax = 5, scaleLabels = null }) {
+    if (isLocked(code)) return
     const m = ensure(code)
     const id = makeId('r')
     const round = clean({
@@ -150,6 +156,7 @@ export const firebaseStore = {
   },
 
   updateRound(code, roundId, patch) {
+    if (isLocked(code)) return
     const r = ensure(code).rounds.find((x) => x.id === roundId)
     if (r) Object.assign(r, patch)
     emit(code)
@@ -157,6 +164,7 @@ export const firebaseStore = {
   },
 
   submitOpinion(code, { roundId, participantId, text, score = null }) {
+    if (isLocked(code)) return
     const m = ensure(code)
     const id = `${roundId}__${participantId}`
     const existing = m.opinions.find((o) => o.id === id)
@@ -168,6 +176,7 @@ export const firebaseStore = {
   },
 
   seedOpinions(code, roundId, texts, scores = []) {
+    if (isLocked(code)) return
     const m = ensure(code)
     const updates = {}
     const synth = m.participants.filter((p) => p.role === 'student' && p.synthetic)
@@ -196,6 +205,7 @@ export const firebaseStore = {
   },
 
   setClusters(code, roundId, clusters, briefing = '') {
+    if (isLocked(code)) return
     const m = ensure(code)
     const updates = {}
     // 기존 군집 제거
@@ -223,6 +233,7 @@ export const firebaseStore = {
   },
 
   deleteOpinion(code, opinionId) {
+    if (isLocked(code)) return
     const m = ensure(code)
     m.opinions = m.opinions.filter((o) => o.id !== opinionId)
     const updates = { [`opinions/${opinionId}`]: null }
@@ -237,6 +248,7 @@ export const firebaseStore = {
   },
 
   deleteCluster(code, clusterId) {
+    if (isLocked(code)) return
     const m = ensure(code)
     const target = m.clusters.find((c) => c.id === clusterId)
     if (!target) return
@@ -249,9 +261,37 @@ export const firebaseStore = {
     update(sRef(code), updates).catch(console.error)
   },
 
+  // 잠금 토글 — isLocked 가드를 우회한다(잠금/해제는 관리자 권한).
+  setLocked(code, locked) {
+    const m = ensure(code)
+    if (m.session) m.session.locked = locked
+    emit(code)
+    update(sRef(code, 'session'), { locked }).catch(console.error)
+  },
+
+  // 세션 전체 삭제(관리자). 로컬 미러·구독도 정리.
+  async deleteSession(code) {
+    await set(sRef(code), null)
+    mirror.delete(code)
+    const s = subs.get(code)
+    if (s) { s.unsub && s.unsub(); subs.delete(code) }
+  },
+
   async listSessions() {
     const snap = await get(ref(db, 'sessions'))
     const v = snap.val() || {}
-    return Object.entries(v).map(([code, s]) => ({ code, title: s.session?.title, status: s.session?.status }))
+    return Object.entries(v).map(([code, s]) => ({
+      code, title: s.session?.title, status: s.session?.status,
+      locked: !!s.session?.locked, createdAt: s.session?.createdAt || '',
+    }))
+  },
+
+  // 관리자 비밀번호: SHA-256 해시만 저장/비교(평문 미저장).
+  async getAdminHash() {
+    const snap = await get(ref(db, 'admin/passwordHash'))
+    return snap.exists() ? snap.val() : null
+  },
+  async setAdminHash(hash) {
+    await set(ref(db, 'admin/passwordHash'), hash)
   },
 }

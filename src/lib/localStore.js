@@ -41,6 +41,9 @@ function nowIso() {
   return new Date().toISOString()
 }
 
+// 잠긴 세션은 읽기 전용 — 모든 쓰기를 막는다(setLocked 만 우회).
+const isLocked = (code) => read(code)?.session?.locked === true
+
 export const localStore = {
   createSession({ title = '', model = 'claude-opus-4-8' } = {}) {
     let code = makeSessionCode()
@@ -101,6 +104,7 @@ export const localStore = {
   },
 
   updateSession(code, patch) {
+    if (isLocked(code)) return
     const snap = read(code)
     if (!snap) return
     snap.session = { ...snap.session, ...patch }
@@ -120,6 +124,7 @@ export const localStore = {
   },
 
   addRound(code, { question, direction = 'seed', parentRoundId = null, responseType = 'open', scaleMax = 5, scaleLabels = null }) {
+    if (isLocked(code)) return null
     const snap = read(code)
     if (!snap) return null
     const id = makeId('r')
@@ -134,6 +139,7 @@ export const localStore = {
   },
 
   updateRound(code, roundId, patch) {
+    if (isLocked(code)) return
     const snap = read(code)
     if (!snap) return
     const r = snap.rounds.find((x) => x.id === roundId)
@@ -143,6 +149,7 @@ export const localStore = {
   },
 
   submitOpinion(code, { roundId, participantId, text, score = null }) {
+    if (isLocked(code)) return
     const snap = read(code)
     if (!snap) return
     const existing = snap.opinions.find((o) => o.roundId === roundId && o.participantId === participantId)
@@ -157,6 +164,7 @@ export const localStore = {
   },
 
   seedOpinions(code, roundId, texts, scores = []) {
+    if (isLocked(code)) return
     const snap = read(code)
     if (!snap) return
     const synth = snap.participants.filter((p) => p.role === 'student' && p.synthetic)
@@ -180,6 +188,7 @@ export const localStore = {
   },
 
   setClusters(code, roundId, clusters, briefing = '') {
+    if (isLocked(code)) return
     const snap = read(code)
     if (!snap) return
     snap.clusters = snap.clusters.filter((c) => c.roundId !== roundId)
@@ -199,6 +208,7 @@ export const localStore = {
   },
 
   deleteOpinion(code, opinionId) {
+    if (isLocked(code)) return
     const snap = read(code)
     if (!snap) return
     snap.opinions = snap.opinions.filter((o) => o.id !== opinionId)
@@ -209,6 +219,7 @@ export const localStore = {
   },
 
   deleteCluster(code, clusterId) {
+    if (isLocked(code)) return
     const snap = read(code)
     if (!snap) return
     const target = snap.clusters.find((c) => c.id === clusterId)
@@ -219,8 +230,39 @@ export const localStore = {
     write(code, snap)
   },
 
+  // 잠금 토글 — isLocked 가드 우회.
+  setLocked(code, locked) {
+    const snap = read(code)
+    if (!snap) return
+    snap.session.locked = locked
+    write(code, snap)
+  },
+
+  // 세션 전체 삭제(관리자).
+  deleteSession(code) {
+    localStorage.removeItem(KEY(code))
+    const raw = localStorage.getItem(INDEX_KEY)
+    const idx = raw ? JSON.parse(raw) : {}
+    delete idx[code]
+    localStorage.setItem(INDEX_KEY, JSON.stringify(idx))
+    notifyLocal(code)
+    if (channel) channel.postMessage({ type: 'change', code })
+  },
+
   listSessions() {
     const raw = localStorage.getItem(INDEX_KEY)
-    return raw ? Object.values(JSON.parse(raw)) : []
+    const idx = raw ? Object.values(JSON.parse(raw)) : []
+    return idx.map((s) => {
+      const snap = read(s.code)
+      return { ...s, locked: !!snap?.session?.locked, createdAt: snap?.session?.createdAt || '' }
+    })
+  },
+
+  // 관리자 비밀번호 해시(SHA-256). firebaseStore 와 동일 인터페이스.
+  getAdminHash() {
+    return localStorage.getItem('polyphony:adminHash')
+  },
+  setAdminHash(hash) {
+    localStorage.setItem('polyphony:adminHash', hash)
   },
 }

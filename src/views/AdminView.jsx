@@ -221,6 +221,7 @@ export default function AdminView() {
         <img className="brand-logo" src="/logo.png" alt="Polyphony" />
         <span className="role-tag admin">진행 (관리자)</span>
         <span className="muted tiny">{session.title}</span>
+        {session.locked && <span className="banner warn tiny">🔒 잠김 · 읽기 전용</span>}
         <span className="spacer" />
         {!hasApiKey() && <span className="banner warn tiny">API 키 없음 · 오프라인 모드</span>}
         <Link className="linklike tiny" to={`/s/${code}/teacher`} target="_blank">
@@ -295,8 +296,8 @@ export default function AdminView() {
                   </div>
                 )}
                 <div className="row" style={{ gap: 8 }}>
-                  <button className="primary" onClick={resumeSession} style={{ flex: 1 }}>
-                    세션 재개
+                  <button className="primary" onClick={resumeSession} disabled={session.locked} style={{ flex: 1 }}>
+                    {session.locked ? '🔒 잠김' : '세션 재개'}
                   </button>
                   <button onClick={exportXlsx} style={{ flex: 1 }}>
                     .xlsx 내보내기
@@ -352,8 +353,8 @@ export default function AdminView() {
             <div className="stack">
               {/* 세션 도구 — 진행 패널 위 한 행 */}
               <div className="row" style={{ gap: 8 }}>
-                <button onClick={endSession} disabled={busy === 'closing'} style={{ flex: 1 }}>
-                  {busy === 'closing' ? '종료 중…' : '세션 종료'}
+                <button onClick={endSession} disabled={busy === 'closing' || session.locked} style={{ flex: 1 }}>
+                  {busy === 'closing' ? '종료 중…' : session.locked ? '🔒 잠김' : '세션 종료'}
                 </button>
                 <button onClick={exportXlsx} style={{ flex: 1 }}>
                   .xlsx 내보내기
@@ -407,7 +408,7 @@ export default function AdminView() {
                         </button>
                       ))}
                     </div>
-                    <button onClick={seedTestOpinions} disabled={busy === 'seeding'}>
+                    <button onClick={seedTestOpinions} disabled={busy === 'seeding' || session.locked}>
                       {busy === 'seeding' ? '생성 중…' : `가상 학생 의견 ${Math.max(1, Math.min(40, parseInt(testN, 10) || 8))}개 투입 (다양성 ${{ low: '낮음', mid: '중간', high: '높음' }[testDiversity]})`}
                     </button>
                   </>

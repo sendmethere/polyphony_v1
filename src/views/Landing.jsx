@@ -181,11 +181,14 @@ export default function Landing() {
       <p className="tiny muted">
         팁: 같은 브라우저에서 탭을 여러 개 열어 교사/학생 화면을 동시에 띄우면 실시간으로 연동됩니다.
       </p>
-      <p className="tiny">
-        <a className="linklike" onClick={() => nav('/help')}>📖 사용 방법 보기</a>
-        {' · '}
-        <a className="linklike" onClick={() => nav('/about')}>🎼 대화주의 이야기</a>
-      </p>
+      <div className="nav-links">
+        <button className="nav-pill" onClick={() => nav('/help')}>
+          <span className="nav-emoji">📖</span> 사용 방법 보기
+        </button>
+        <button className="nav-pill" onClick={() => nav('/about')}>
+          <span className="nav-emoji">🎼</span> 대화주의 이야기
+        </button>
+      </div>
     </div>
   )
 }
